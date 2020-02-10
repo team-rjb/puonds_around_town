@@ -11,8 +11,7 @@ async function user(req, res) {
 }
 
 async function registerUser(req, res) {
-  const { username, password, first_name } = req.body;
-  const isAdmin = false;
+  const { username, password, first_name, isadmin, org_id } = req.body;
   const db = req.app.get("db");
 
   // Check for the username
@@ -32,7 +31,8 @@ async function registerUser(req, res) {
       username,
       hash,
       first_name,
-      isAdmin
+      isadmin,
+      org_id
     ]);
 
     // store the new user on session
@@ -40,7 +40,8 @@ async function registerUser(req, res) {
       user_id: newUser[0].user_id,
       username: newUser[0].username,
       first_name: newUser[0].first_name,
-      isAdmin: newUser[0].isAdmin
+      isAdmin: newUser[0].isadmin,
+      org_id: newUser[0].org_id
     };
 
     console.log(req.session.user);
@@ -72,7 +73,8 @@ async function loginUser(req, res) {
         user_id: foundUser[0].user_id,
         username: foundUser[0].username,
         first_name: foundUser[0].first_name,
-        isAdmin: foundUser[0].isAdmin
+        isAdmin: foundUser[0].isadmin,
+        org_id: foundUser[0].org_id
       };
     }
     console.log("Logged in", req.session.user);

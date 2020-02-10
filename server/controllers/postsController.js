@@ -47,16 +47,16 @@ console.log("postController, getting random posts amount:", amount)
 
 // Add/Edit Post Calls
 async function addPost(req, res) {
-  const { pic, pet_name, breed, age, gender, fixed, bio, rating, 
-    org_name, street_address, city, state} = req.body;
+  const { pic, pet_name, breed, age, gender, fixed, bio, rating} = req.body;
   const user_id = req.session.user.user_id;
+  const org_id = req.session.user.org_id
   
 
   const db = req.app.get("db");
 
   const addedPost = await db.posts.addPost([
     user_id, pic, pet_name, breed, age, gender, fixed, bio, rating, 
-    org_name, street_address, city, state
+    org_id
   ]);
   console.log(addedPost)
   res.status(200).json(addedPost);
