@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const initialState = {
-  posts: {},
+  posts: [],
   loading: false,
   currentPost_id: 0,
   postsByCategory: [],
@@ -24,6 +24,7 @@ const DELETE_POST = "DELETE_POST";
 
 
 export function getAllPosts() {
+  console.log("hit");
   return {
     type: GET_ALL_POSTS,
     payload: Axios.get("/api/posts")
