@@ -44,10 +44,10 @@ const { allPosts, getAllPostsByUserId, addPostCount, addPost, editPost, deletePo
 
 
 // Auth Endpoints
-app.get("/auth/user", user); 
-app.post("/auth/register", registerUser);
-app.post("/auth/login", loginUser); 
-app.get("/auth/logout", logoutUser); 
+app.get("/auth/user", user); // Works
+app.post("/auth/register", registerUser); //Works. Must specify isadmin
+app.post("/auth/login", loginUser); // Works
+app.get("/auth/logout", logoutUser); // Works
  
 
 // Posts Endpoints
