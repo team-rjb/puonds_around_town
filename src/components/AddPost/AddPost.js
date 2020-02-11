@@ -20,7 +20,6 @@ class AddPost extends Component {
             rating: "",
             addPost: false
         }
-
     }
 
     handleChange = e => {

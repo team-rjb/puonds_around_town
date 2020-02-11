@@ -74,19 +74,17 @@ async function addPostCount(req, res) {
 
 
 async function editPost(req, res) {
-  const { pic, pet_name, breed, age, gender, fixed, bio, rating, 
-    org_name, street_address, city, state} = req.body;
+  const { pic, post_name, breed, age, gender, fixed, bio, rating } = req.body;
   const post_id = +req.params.post_id;
-  const user_id = req.session.user.user_id;
+  const user_id = 4;
 
   const db = req.app.get("db");
 
   const editedPost = await db.posts.editPost([
-    post_id, user_id, pic, pet_name, breed, age, gender, fixed, bio, rating, 
-    org_name, street_address, city, state
+   pic, post_name, breed, age, gender, fixed, bio, rating, post_id, user_id
   ])
 
-  console.log(editedPost)
+  console.log("editPost in postController", editedPost)
   res.status(200).json(editedPost);
 }
 

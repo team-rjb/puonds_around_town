@@ -1,33 +1,30 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { editPost, deletePost } from "../../../reducks/reducers/postsReducer";
+import { editPost, deletePost } from "../../redux/reducers/postsReducer";
+import { useForm } from "react-hook-form";
 
 export default function EditPost(props) {
   const dispatch = useDispatch();
   const [post, setPost] = useState({
     pic: "",
-    post_name: "",
-    breed: "",
-    age: "",
-    gender: "",
-    fixed: "",
-    bio: "",
-    rating: 0
   });
-
-  function Options({ options }) {
-    return options.map(option => (
-      <option key={option.id} value={option.value} object={option}>
-        {option.value}
-      </option>
-    ));
-  }
   const [editState, setEditState] = useState(false);
   const [deleteState, setDeleteState] = useState(false);
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = data => handleEditPost(data);
+  console.log(errors);
 
-  const handleEditPost = () => {
+  const handleEditPost = (data) => {
     const post_id = props.postId;
-    const updated_post = post;
+    const updated_post = {
+        pic: post.pic,
+        post_name: data.PetName,
+        breed: data.Breed,
+        age: data.Age,
+        gender: data.Gender,
+        fixed: data.Altered,
+        bio: data.Bio,
+        rating: data.Rating};
     console.log("handleEditPost, editPost.js", post_id);
     dispatch(editPost(post_id, updated_post));
     setEditState(false);
@@ -41,70 +38,83 @@ export default function EditPost(props) {
     setDeleteState(false);
     // props.setView("profile");
   };
+  const checkUploadResult = (error, resultEvent) => {
+    if (resultEvent.event === "success") {
+      console.log("checkUploadResult success: setting Post");
+      setPost({ ...post, pic: resultEvent.info.url });
+    }
+    else {console.log(error)}
+  };
+  let widget;
+  if (window.cloudinary) {
+    widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: `${process.env.REACT_APP_cloudName}`,
+        uploadPreset: `${process.env.REACT_APP_uploadPreset}`,
+        sources: ["local", "url", "facebook", "instagram"],
+        Default: false
+      },
+      (error, result) => {
+        checkUploadResult(error, result);
+      }
+    );
+  }
 
   return (
     <div>
       {editState ? (
         <div>
-          <input
-            name="post_name"
-            placeholder="Pet Name"
-            onChange={e =>
-              setPost({ ...post, post_name: e.currentTarget.value })
-            }
-          />
-          <input
-            name="breed"
-            placeholder="Pet Breed"
-            onChange={e => setPost({ ...post, breed: e.currentTarget.value })}
-          />
-          <input
-            name="age"
-            placeholder="Pet Age"
-            onChange={e => setPost({ ...post, age: e.currentTarget.value })}
-          />
-          <input
-            name="gender"
-            placeholder="Pet Sex"
-            onChange={e => setPost({ ...post, gender: e.currentTarget.value })}
-          />
+          <button
+            className="add-post-button-1"
+            name="img"
+            onClick={() => widget.open()}
+          >
+            Select a Photo
+          </button>
 
-          <h1>
-            <select
-              name="gender"
-              placeholder="Pet Sex"
-              className="form-control"
-              onChange={e =>
-                setPost({ ...post, gender: e.currentTarget.value })}>
-              <Options options={[Male, Female, Undetermined]} />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              type="text"
+              placeholder="PetName"
+              name="PetName"
+              ref={register({ required: true, maxLength: 80 })}
+            />
+            <input
+              type="text"
+              placeholder="Breed"
+              name="Breed"
+              ref={register({ required: true, maxLength: 100 })}
+            />
+            <input
+              type="number"
+              placeholder="Age"
+              name="Age"
+              ref={register({ required: true })}
+            />
+            <input
+              type="text"
+              placeholder="Bio/Description"
+              name="Bio"
+              ref={register({ required: true })}
+            />
+            <select name="Gender" placeholder="Gender" ref={register({ required: true })}>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Undetermined">Undetermined</option>
             </select>
-          </h1>
-
-          <input
-            name="fixed"
-            placeholder="Spayed/Neutered?"
-            onChange={e => setPost({ ...post, fixed: e.currentTarget.value })}/>
-          <h1>
-            <select
-              name="gender"
-              className="form-control"
-              placeholder="Spayed/Neutered?"
-              onChange={e => setPost({ ...post, fixed: e.currentTarget.value })} >
-              <Options options={[True, False, Undetermined]} />
+            <select name="Altered" placeholder="Spayed/Neutered" ref={register({ required: true })}>
+              <option value="True">Fixed: True</option>
+              <option value="False">Fixed: False</option>
+              <option value="Undetermined">Undetermined</option>
             </select>
-          </h1>
-
-          <input
-            name="bio"
-            placeholder="Bio/Description"
-            onChange={e => setPost({ ...post, bio: e.currentTarget.value })}
-          />
-          <input
-            name="rating"
-            placeholder="Fun Rating"
-            onChange={e => setPost({ ...post, rating: e.currentTarget.value })}
-          />
-          <button onClick={handleEditPost}>Submit Edit</button>
+            <input
+              type="number"
+              placeholder="Fun Rating"
+              name="Rating"
+              ref={register({ required: true })}
+            />
+            <input type="submit" />
+          </form>
         </div>
       ) : (
         <div>
