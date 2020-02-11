@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { addPost } from '../../redux/reducers/postsReducer';
 import { getSession } from '../../redux/reducers/authReducer';

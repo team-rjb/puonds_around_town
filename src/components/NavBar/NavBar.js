@@ -37,7 +37,7 @@ export default class NavBar extends React.Component {
         <div>
             
         <header>
-            <h2 id="logo"> Pounds Around Town </h2>
+            <Link to="/AllPosts/"><h2 id="logo"> Pounds Around Town </h2></Link>
             
             <ul id='site-nav'>
                 <Link to= "/" className="link"><li className='menu-text'>GuestLanding</li></Link>

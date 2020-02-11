@@ -1,37 +1,50 @@
-import React, { useState } from "react";
-import { loginUser } from "../../redux/reducers/authReducer";
-import {  useDispatch } from "react-redux";
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {loginUser} from "../../redux/reducers/authReducer";
+import {Redirect} from "react-router-dom";
 
+class Login extends Component {
+    constructor () {
+        super();
+        this.state = {
+            username: "",
+            password: ""        
+        }
+    }
 
-function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
-  const handleLogin = evt => {
-    console.log("Logging in", username);
-    dispatch(loginUser({ username, password }));
-  };
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value })
+      }
+    
+      handleLogin = () => {
+        const { loginUser } = this.props;
+        const { username, password } = this.state;
+    
+        loginUser({ username, password })
+      }
 
+render() {
+    if(this.props.user_id){
+        return(
+            <Redirect to="/UserProfile/" />
+        )
+    }
 
-  return (
-    <form onSubmit={handleLogin}>
-      <input
-        name="username"
-        placeholder="Username"
-        value={username}
-        onChange={e => setUsername(e.target.value)}
-      />
-      <input
-        name="password"
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-      />
-      <input type="submit" value="Submit" />
-    </form>
-  );
+    return (
+        <div>
+            <input name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} />
+            <input name="password" type="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+    
+        <button onClick={this.handleLogin}>Login</button>
+        </div>
+    )
+}
 }
 
-
-export default Login;
+const mapStateToProps = reduxState => {
+    return {
+      user_id: reduxState.authReducer.currentUser_id
+    }
+  }
+  
+  export default connect(mapStateToProps, { loginUser })(Login);
