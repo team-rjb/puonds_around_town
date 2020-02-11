@@ -1,18 +1,15 @@
 UPDATE posts
 SET
- pic = $3,
- pet_name = $4,
- breed = $5,
- age = $6,
- gender = $7,
- fixed = $8, 
- bio = $9,
- rating = $10, 
- org_name = $11, 
- street_address = $12,
- city =$13,
- state = $14
-WHERE post_id = $1 AND user_id=$2
+ pic = $1,
+ post_name = $2,
+ breed = $3,
+ age = $4,
+ gender = $5,
+ fixed = $6, 
+ bio = $7,
+ rating =$8
+WHERE post_id = $9 AND user_id=$10
+RETURNING *
 
 
 -- UPDATE posts
