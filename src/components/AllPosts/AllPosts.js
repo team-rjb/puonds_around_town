@@ -23,13 +23,19 @@ class AllPosts extends Component {
             
             return (
                 <div key={i}>
-                    <h3>dog: {post.user_id}</h3>
+                    <h6>{post.pic}</h6>
+            <h6>{post.breed}</h6>
+            <h6>{post.age}</h6>
+            <h6>{post.gender}</h6>
+            <h6>{post.fixed}</h6>
+            <h6>{post.bio}</h6>
+            <h6>{post.rating}</h6>
 
                 </div>
             )})
         return (
             <div>
-                <h1>dog</h1>
+                <h1>All Dogs</h1>
                 {postsMapped}
             </div>
         )
