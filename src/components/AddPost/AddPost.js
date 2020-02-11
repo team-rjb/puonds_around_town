@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import { connect } from 'react-redux';
 import { addPost } from '../../redux/reducers/postsReducer';
 import { getSession } from '../../redux/reducers/authReducer';
 import { withRouter, Link } from 'react-router-dom';
-=======
-import {Link} from 'react-router-dom'
->>>>>>> master
 require("dotenv").config();
 
 
@@ -24,7 +20,6 @@ class AddPost extends Component {
             rating: "",
             addPost: false
         }
-
     }
 
     handleChange = e => {
