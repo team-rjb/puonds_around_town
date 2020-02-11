@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import {Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import { addPost } from '../../redux/reducers/postsReducer';
+import { getSession } from '../../redux/reducers/authReducer';
+import { withRouter, Link } from 'react-router-dom';
 require("dotenv").config();
 
 
@@ -74,4 +78,13 @@ class AddPost extends Component {
     }
 }
 
-export default AddPost;
+const mapStateToProps = reduxState => {
+    return {
+        user_id: reduxState.authReducer.user_id
+    }
+}
+
+export default withRouter(connect(mapStateToProps, {
+    addPost,
+    getSession
+})(AddPost));
