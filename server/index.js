@@ -53,13 +53,14 @@ app.get("/auth/logout", logoutUser); // Works
 // Posts Endpoints
 // Editing post COUNT: singular api/post. Editing full POST: plural api/posts
 // NOTE: /api/randposts and /api/userposts for those pulls.
-app.get("/api/posts",  allPosts); 
+
+app.get("/api/posts",  allPosts); //Works
 app.get("/api/post/:post_id",  postById) 
 app.put("/api/count/:user_id", addPostCount) 
 app.get("/api/randposts/:amount",  getRandomPosts) 
 app.get("/api/posts/:category_name", allPostsByCategoryName) 
 app.get("/api/userposts/:user_id", getAllPostsByUserId) 
-app.post("/api/posts",  addPost); 
+app.post("/api/posts",  addPost); //Works
 app.put("/api/posts/:post_id",  editPost); 
 app.delete("/api/posts/:post_id",  deletePost); 
 
