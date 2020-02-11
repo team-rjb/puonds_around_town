@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Login extends Component {
+class GuestLanding extends Component {
     constructor() {
         super();
         this.state = {
@@ -15,9 +15,12 @@ class Login extends Component {
         return (
             <div>
                 <h1>Login</h1>
+                <input/>
+                <input/>
+                <button>Login</button>
             </div>
         )
     }
 }
 
-export default Login;
+export default GuestLanding;

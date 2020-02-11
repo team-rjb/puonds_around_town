@@ -23,7 +23,7 @@ class AllPosts extends Component {
             
             return (
                 <div key={i}>
-                    <h3>dog: {post.user_id}</h3>
+                    <h3>Dog: {post.breed}</h3>
 
                 </div>
             )})
