@@ -113,9 +113,10 @@ export default function reducer(state = initialState, action) {
     }
     case LOGOUT_USER: {
       return {
-        user_id: null,
-        username: "",
-        loading: false
+        currentUser_id: null,
+        currentUsername: "",
+        loading: false,
+        loggedIn: false
       }
     }
     default:
