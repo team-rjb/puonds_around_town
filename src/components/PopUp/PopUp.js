@@ -1,6 +1,7 @@
 import React from "react";
 import Popup from "reactjs-popup";
 import PostCard from '../PostCard/PostCard';
+import { useSelector } from "react-redux";
 
 export default (props) => (
     <Popup trigger={<img className="dog-image" src={props.pic} alt='Dog'></img>} position="center center">

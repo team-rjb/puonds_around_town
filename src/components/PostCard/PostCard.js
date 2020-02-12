@@ -24,6 +24,7 @@ class PostCard extends Component {
                     <h5 className="dog-rating">{this.props.rating}</h5>
                     <h5 className="dog-org_name">{this.props.org_name}</h5>
                     <h5 className="dog-bio">{this.props.bio}</h5>
+                    {isAdmin ?(  null):( <button>Favorite</button>)}
                 </div>
             </div>
         )
