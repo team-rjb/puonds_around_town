@@ -90,7 +90,7 @@ async function loginUser(req, res) {
 async function logoutUser(req, res) {
   console.log(req.session.user, "logged out");
   req.session.destroy();
-  res.sendStatus(200);
+  res.status(200).json("logged out");
 }
 
 module.exports = {

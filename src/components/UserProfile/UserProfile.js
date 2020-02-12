@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
+import React from "react";
+import { Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
-class UserProfile extends Component {
-    constructor() {
-        super();
-        this.state = {
+export default function UserProfile() {
+  const loggedIn = useSelector(state => state.authReducer.loggedIn);
+  const userPosts = useSelector(state => state.postsReducer.postsByUserId)
+  const isAdmin = useSelector(state => state.authReducer.isAdmin);
 
-        }
+    return(
+      <div>
+        {loggedIn ? (
+          <div>
+            <h1>User Profile</h1>
+          </div>
+        ) : (
+          <Redirect to="/" />
+        )}
+      </div>
+    );
+  }
 
-    }
+  
 
-
-    render() {
-        return (
-            <div>
-                <h1>User Profile</h1>
-                
-            </div>
-        )
-    }
-}
-
-export default UserProfile;
