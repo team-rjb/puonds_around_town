@@ -4,6 +4,7 @@ const initialState = {
   currentUser_id: null,
   currentUsername: null,
   currentUser: {},
+  isAdmin: false,
   loading: false,
   loggedIn: false
 };
@@ -77,6 +78,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         currentUser_id: payload.data.user_id,
         currentUsername: payload.data.username,
+        isAdmin: payload.data.isAdmin,
         loading: false
       };
     }
@@ -90,12 +92,6 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-<<<<<<< HEAD
-        loggedIn: true,
-        currentUser_id: payload.data.user_id,
-        currentUsername: payload.data.user
-      };
-=======
         user_id: payload.data.user_id,
         username: payload.data.user,
         first_name: payload.data.first_name,
@@ -103,7 +99,6 @@ export default function reducer(state = initialState, action) {
         isAdmin: payload.data.isAdmin,
         org_id: payload.data.org_id
       }
->>>>>>> master
     }
     case `${LOGIN_USER}_PENDING`: {
       return {
@@ -115,32 +110,18 @@ export default function reducer(state = initialState, action) {
         ...state,
         currentUser_id: payload.data.user_id,
         currentUsername: payload.data.username,
+        isAdmin: payload.data.isAdmin,
         loading: false,
         loggedIn: true
       };
     }
     case `${LOGOUT_USER}_PENDING`: {
       return {
-<<<<<<< HEAD
-        ...state,
-        loading: true
-      };
-    }
-    case `${LOGOUT_USER}_FULFILLED`: {
-      console.log("authReducer logout hit");
-      return {
-        ...state,
-=======
->>>>>>> master
         currentUser_id: null,
         currentUsername: "",
         loading: false,
         loggedIn: false
-<<<<<<< HEAD
-      };
-=======
       }
->>>>>>> master
     }
     default:
       return state;

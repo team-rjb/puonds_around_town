@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 import React, { useEffect } from "react";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPosts, getAllPostsByUserId } from "../../redux/reducers/postsReducer";
 import { Redirect } from "react-router-dom";
-=======
-import React, { Component } from 'react';
-import Login from "../Login/Login"
-import Register from "../Register/Register"
-
->>>>>>> master
 
 
 function GuestLanding() {
@@ -21,6 +14,7 @@ function GuestLanding() {
 //Loggedin is self-explanatory, authState is the entire state value of the authReducer
   const dispatch = useDispatch();
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
+  const isAdmin = useSelector(state => state.authReducer.isAdmin);
   const authState = useSelector(state => state.authReducer);
   const posts = useSelector(state => state.postsReducer.posts)
 

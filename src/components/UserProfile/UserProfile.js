@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 export default function UserProfile() {
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
   const userPosts = useSelector(state => state.postsReducer.postsByUserId)
+  const isAdmin = useSelector(state => state.authReducer.isAdmin);
 
     return(
       <div>
