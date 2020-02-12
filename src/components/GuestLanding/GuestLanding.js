@@ -3,7 +3,6 @@ import Login from "../Login/Login"
 import Register from "../Register/Register"
 
 
-
 class GuestLanding extends Component {
     constructor() {
         super();
@@ -18,11 +17,16 @@ class GuestLanding extends Component {
         return (
             <div>
                 <h1>GuestLanding </h1>
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                 <Login />
-
                 <Register />
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
             </div>
         )
     }
