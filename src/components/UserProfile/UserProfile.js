@@ -1,17 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import { Redirect } from "react-router-dom";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
-class UserProfile extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
 
-  render() {
-    return (
+export default function UserProfile() {
+  const loggedIn = useSelector(state => state.authReducer.loggedIn);
+  const userPosts = useSelector(state => state.postsReducer.postsByUserId)
+
+    return(
       <div>
-        {this.props.loggedIn ? (
+        {loggedIn ? (
           <div>
             <h1>User Profile</h1>
           </div>
@@ -21,13 +19,5 @@ class UserProfile extends Component {
       </div>
     );
   }
-}
 
-const mapStateToProps = reduxState => {
-  return {
-    user_id: reduxState.authReducer.currentUser_id,
-    loggedIn: reduxState.authReducer.loggedIn
-  };
-};
 
-export default connect(mapStateToProps, {})(UserProfile);
