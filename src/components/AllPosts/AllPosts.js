@@ -1,41 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {getAllPosts} from '../../redux/reducers/postsReducer';
+import { getAllPosts } from '../../redux/reducers/postsReducer';
+import MiniPostcard from "../MiniPostcard/MiniPostcard";
 
 
 class AllPosts extends Component {
     constructor() {
         super();
         this.state = {
-           posts: []
+            posts: []
         }
     }
 
     componentDidMount() {
-       this.props.getAllPosts();
+        this.props.getAllPosts();
     }
 
 
     render() {
         const { posts } = this.props;
-
-        const postsMapped= posts.map((post, i) => {
-            
+        const postsMapped = posts.map((post, i) => {
             return (
                 <div key={i}>
-                    <h6>{post.pic}</h6>
-            <h6>{post.breed}</h6>
-            <h6>{post.age}</h6>
-            <h6>{post.gender}</h6>
-            <h6>{post.fixed}</h6>
-            <h6>{post.bio}</h6>
-            <h6>{post.rating}</h6>
-
+                    <MiniPostcard
+                        user={post.user_id}
+                        pic={post.pic}
+                        post_name={post.post_name}
+                        breed={post.breed}
+                        age={post.age}
+                        gender={post.gender}
+                        fixed={post.fixed}
+                        rating={post.rating}
+                        org_name={post.org_name}
+                        bio={post.bio}
+                    />
                 </div>
-            )})
+            )
+        })
         return (
             <div>
-                <h1>All Dogs</h1>
                 {postsMapped}
             </div>
         )
@@ -44,7 +47,7 @@ class AllPosts extends Component {
 
 const mapStateToProps = reduxState => {
     return {
-      posts: reduxState.postsReducer.posts
+        posts: reduxState.postsReducer.posts
     }
 }
 
