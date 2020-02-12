@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link } from "react-router-dom"; 
 import "./NavBar.css";
+import {logoutUser} from "../../redux/reducers/authReducer"
 
 export default class NavBar extends React.Component {
     constructor (){
@@ -33,6 +34,7 @@ export default class NavBar extends React.Component {
 
 
     render(){
+        
     return (
         <div>
             
@@ -43,7 +45,7 @@ export default class NavBar extends React.Component {
                 <Link to= "/" className="link"><li className='menu-text'>GuestLanding</li></Link>
                 <Link to="/AllPosts/" className="link"><li className='menu-text'>All Posts</li></Link>
                 <Link to="/UserProfile/" className="link"><li className='menu-text'>User Profile</li></Link>
-                <Link to="/" className="link"><li className='menu-text'>Logout</li></Link>
+                <Link to="/" className="link"><li className='menu-text' onClick={logoutUser}>Logout</li></Link>
                 
                 
                 
