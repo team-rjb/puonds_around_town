@@ -24,7 +24,7 @@ const DELETE_POST = "DELETE_POST";
 
 
 export function getAllPosts() {
-  console.log("hit");
+  console.log("getAllPosts hit");
   return {
     type: GET_ALL_POSTS,
     payload: Axios.get("/api/posts")

@@ -47,7 +47,7 @@ const { allPosts, getAllPostsByUserId, addPostCount, addPost, editPost, deletePo
 app.get("/auth/user", user); // Works
 app.post("/auth/register", registerUser); //Works. Must specify isadmin
 app.post("/auth/login", loginUser); // Works
-app.get("/auth/logout", logoutUser); // Works
+app.post("/auth/logout", logoutUser); // Works
  
 
 // Posts Endpoints
