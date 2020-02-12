@@ -90,10 +90,20 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
+<<<<<<< HEAD
         loggedIn: true,
         currentUser_id: payload.data.user_id,
         currentUsername: payload.data.user
       };
+=======
+        user_id: payload.data.user_id,
+        username: payload.data.user,
+        first_name: payload.data.first_name,
+        email: payload.data.email,
+        isAdmin: payload.data.isAdmin,
+        org_id: payload.data.org_id
+      }
+>>>>>>> master
     }
     case `${LOGIN_USER}_PENDING`: {
       return {
@@ -111,6 +121,7 @@ export default function reducer(state = initialState, action) {
     }
     case `${LOGOUT_USER}_PENDING`: {
       return {
+<<<<<<< HEAD
         ...state,
         loading: true
       };
@@ -119,11 +130,17 @@ export default function reducer(state = initialState, action) {
       console.log("authReducer logout hit");
       return {
         ...state,
+=======
+>>>>>>> master
         currentUser_id: null,
         currentUsername: "",
         loading: false,
         loggedIn: false
+<<<<<<< HEAD
       };
+=======
+      }
+>>>>>>> master
     }
     default:
       return state;

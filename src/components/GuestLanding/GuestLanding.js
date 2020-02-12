@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPosts, getAllPostsByUserId } from "../../redux/reducers/postsReducer";
 import { Redirect } from "react-router-dom";
+=======
+import React, { Component } from 'react';
+import Login from "../Login/Login"
+import Register from "../Register/Register"
+
+>>>>>>> master
 
 
 function GuestLanding() {

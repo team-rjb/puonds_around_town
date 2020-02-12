@@ -11,7 +11,7 @@ async function user(req, res) {
 }
 
 async function registerUser(req, res) {
-  const { username, password, first_name, isadmin, org_id } = req.body;
+  const { username, password, email, first_name, isAdmin, org_id } = req.body;
   const db = req.app.get("db");
 
   // Check for the username
@@ -31,8 +31,10 @@ async function registerUser(req, res) {
       username,
       hash,
       first_name,
-      isadmin,
+      email,
+      isAdmin,
       org_id
+      
     ]);
 
     // store the new user on session
@@ -40,8 +42,10 @@ async function registerUser(req, res) {
       user_id: newUser[0].user_id,
       username: newUser[0].username,
       first_name: newUser[0].first_name,
-      isAdmin: newUser[0].isadmin,
+      email: newUser[0].email,
+      isAdmin: newUser[0].isAdmin,
       org_id: newUser[0].org_id
+      
     };
 
     console.log(req.session.user);

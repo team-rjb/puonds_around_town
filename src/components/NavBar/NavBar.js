@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import { Link } from "react-router-dom";
 import { logoutUser } from "../../redux/reducers/authReducer";
 import "./NavBar.css";
+import {logoutUser} from "../../redux/reducers/authReducer"
 
 class NavBar extends React.Component {
   constructor() {
@@ -32,10 +33,17 @@ class NavBar extends React.Component {
     }
   };
 
+<<<<<<< HEAD
   render() {
+=======
+
+    render(){
+        
+>>>>>>> master
     return (
       <div>
         <header>
+<<<<<<< HEAD
           <Link to="/AllPosts/">
             <h2 id="logo"> Pounds Around Town </h2>
           </Link>
@@ -84,6 +92,24 @@ class NavBar extends React.Component {
               <Link to="/" className="link">
                 <li className="menu-text" onClick={this.props.logoutUser}>
                   Logout
+=======
+            <Link to="/AllPosts/"><h2 id="logo"> Pounds Around Town </h2></Link>
+            
+            <ul id='site-nav'>
+                <Link to= "/" className="link"><li className='menu-text'>GuestLanding</li></Link>
+                <Link to="/AllPosts/" className="link"><li className='menu-text'>All Posts</li></Link>
+                <Link to="/UserProfile/" className="link"><li className='menu-text'>User Profile</li></Link>
+                <Link to="/" className="link"><li className='menu-text' onClick={logoutUser}>Logout</li></Link>
+                
+                
+                
+                <li>
+                   
+                    <img className="responsive-menu"
+                    onClick={this.handleClick}
+                    src='https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png' alt='menu icon'/>
+                
+>>>>>>> master
                 </li>
               </Link>
             </ul>
