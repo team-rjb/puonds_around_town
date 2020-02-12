@@ -98,19 +98,19 @@ header {
   }
 }
 
-img {
+.responsive-menu {
   width: 40px;
   display: none;
   margin-top: 15px;
 }
 
-img:hover {
+.responsive-menu:hover {
   width: 75px;
   height: 75px;
 }
 
 @media (max-width: 700px) {
-  img {
+  .responsive-menu {
     display: block;
     -webkit-transition: width 1s, height 1s;
     transition: width 1s, height 1s;
