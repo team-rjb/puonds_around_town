@@ -94,7 +94,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         loading: false,
         user_id: payload.data.user_id,
-        username: payload.data.user
+        username: payload.data.user,
+        first_name: payload.data.first_name,
+        email: payload.data.email,
+        isAdmin: payload.data.isAdmin,
+        org_id: payload.data.org_id
       }
     }
     case `${LOGIN_USER}_PENDING`: {
@@ -113,9 +117,10 @@ export default function reducer(state = initialState, action) {
     }
     case LOGOUT_USER: {
       return {
-        user_id: null,
-        username: "",
-        loading: false
+        currentUser_id: null,
+        currentUsername: "",
+        loading: false,
+        loggedIn: false
       }
     }
     default:
