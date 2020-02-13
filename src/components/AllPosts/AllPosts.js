@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getAllPosts } from '../../redux/reducers/postsReducer';
 import MiniPostcard from "../MiniPostcard/MiniPostcard";
 
 
@@ -13,7 +12,7 @@ class AllPosts extends Component {
     }
 
     componentDidMount() {
-        this.props.getAllPosts();
+        
     }
 
 
@@ -24,6 +23,7 @@ class AllPosts extends Component {
                 <div key={i}>
                     <MiniPostcard
                         user={post.user_id}
+                        post_id={post.post_id}
                         pic={post.pic}
                         post_name={post.post_name}
                         breed={post.breed}
@@ -33,6 +33,7 @@ class AllPosts extends Component {
                         rating={post.rating}
                         org_name={post.org_name}
                         bio={post.bio}
+                        isAdmin={this.props.isAdmin}
                     />
                 </div>
             )
@@ -47,8 +48,9 @@ class AllPosts extends Component {
 
 const mapStateToProps = reduxState => {
     return {
-        posts: reduxState.postsReducer.posts
+        posts: reduxState.postsReducer.posts,
+        isAdmin: reduxState.authReducer.isAdmin
     }
 }
 
-export default connect(mapStateToProps, { getAllPosts })(AllPosts); 
+export default connect(mapStateToProps, {})(AllPosts); 

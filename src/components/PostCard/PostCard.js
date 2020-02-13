@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
+import { addToFavorites } from '../../redux/reducers/postsReducer';
 
 class PostCard extends Component {
     constructor() {
@@ -9,7 +10,6 @@ class PostCard extends Component {
         }
 
     }
-
 
     render() {
         return (
@@ -24,10 +24,13 @@ class PostCard extends Component {
                     <h5 className="dog-rating">{this.props.rating}</h5>
                     <h5 className="dog-org_name">{this.props.org_name}</h5>
                     <h5 className="dog-bio">{this.props.bio}</h5>
+                    {this.props.isAdmin ? (null) : (<button onClick = {() => this.props.addToFavorites(this.props.post_id)}>Favorite</button>)}
                 </div>
             </div>
         )
     }
 }
 
-export default PostCard;
+export default connect(null, {
+    addToFavorites,
+})(PostCard);
