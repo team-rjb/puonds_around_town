@@ -62,6 +62,18 @@ async function addPost(req, res) {
   res.status(200).json(addedPost);
 }
 
+async function addToFavorites(req, res) {
+  const post_id = req.params.post_id
+  const user_id = req.session.user.user_id
+  console.log(post_id, user_id)
+  const db = req.app.get("db");
+
+  const addedFavorite = await db.posts.addToFavorites([
+    post_id, user_id
+  ])
+  res.status(200).json(addedFavorite)
+}
+
 async function addPostCount(req, res) {
   const user_id = req.session.user.user_id;
   const db = req.app.get("db");
@@ -107,5 +119,6 @@ module.exports = {
   addPost,
   editPost,
   deletePost,
-  addPostCount
+  addPostCount,
+  addToFavorites
 }

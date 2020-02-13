@@ -40,7 +40,7 @@ massive(CONNECTION_STRING).then(db => {
 
 // De-structured controllers
 const { user, registerUser, loginUser, logoutUser } = ac;
-const { allPosts, getAllPostsByUserId, addPostCount, addPost, editPost, deletePost, allPostsByCategoryName, postById, getRandomPosts } = pc;
+const { allPosts, getAllPostsByUserId, addPostCount, addPost, editPost, deletePost, allPostsByCategoryName, postById, getRandomPosts, addToFavorites } = pc;
 
 
 // Auth Endpoints
@@ -63,6 +63,7 @@ app.get("/api/userposts/:user_id", getAllPostsByUserId)
 app.post("/api/posts",  addPost); //Works
 app.put("/api/posts/:post_id",  editPost); 
 app.delete("/api/posts/:post_id",  deletePost); 
+app.post("/api/favorites/:post_id", addToFavorites);
 
  
 
