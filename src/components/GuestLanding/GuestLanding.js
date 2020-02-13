@@ -10,15 +10,15 @@ function GuestLanding() {
 //The hooks below are doing the following:
 //Dispatch is destructing the "dispatch" hook which is used to send redux commands
 //useSelector is connecting to the Redux store to get state values, and assigning them to
-//the local variables "loggedIn" and "authState". 
-//Loggedin is self-explanatory, authState is the entire state value of the authReducer
+//the local variables "loggedIn", "isAdmin" and "authState". 
+//LoggedIn/IsAdmin are self-explanatory, authState is the entire state value of the authReducer
   const dispatch = useDispatch();
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
   const isAdmin = useSelector(state => state.authReducer.isAdmin);
   const authState = useSelector(state => state.authReducer);
   const posts = useSelector(state => state.postsReducer.posts)
 
-  //This hook will pull in ALL POSTS into the postsReducer when the user lands on the guest landing page
+  //This useEffect hook will pull in ALL POSTS into the postsReducer when the user lands on the guest landing page
   //Once a user is marked "logged in" the hook will run again and pull
   //All posts created by that userId (this gives us an array of posts to display to admins)
   //The commented out lines will pull user FAVORITES once we establish that table
