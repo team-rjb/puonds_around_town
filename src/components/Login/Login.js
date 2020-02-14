@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../../redux/reducers/authReducer";
 
-
 class Login extends Component {
   constructor() {
     super();
@@ -26,7 +25,8 @@ class Login extends Component {
   render() {
     return (
       <div>
-            <h1>Testing Tests</h1>
+            <h1>Pounds Around Town</h1>
+            <h3>Login Below</h3>
             <input
               name="username"
               placeholder="username"

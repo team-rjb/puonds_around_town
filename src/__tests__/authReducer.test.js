@@ -1,8 +1,8 @@
-import { getSession } from "../redux/reducers/authReducer.js";
+import { getCurrentUser } from "../redux/reducers/authReducer.js";
 
-// describe("getSession", () => {
-//     test(`passes when value is NaN`, () => {
-//         expect(NaN).toBeNaN();
-//         expect(1).net.toBeNaN();
-//     })
-// })
+describe('getCurrentUser', () => {
+    test('passes when value is NaN', () => {
+        expect(NaN).toBeNaN();
+        expect(1).not.toBeNaN();
+    });
+})
