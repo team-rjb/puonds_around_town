@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loginUser } from "../../redux/reducers/authReducer";
 
-
 class Login extends Component {
   constructor() {
     super();
@@ -26,24 +25,21 @@ class Login extends Component {
   render() {
     return (
       <div>
-        
-            <input
-              name="username"
-              placeholder="username"
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-            <input
-              name="password"
-              type="password"
-              placeholder="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-            />
-            <button onClick={this.handleLogin}>Login</button>
-          </div>
-      
-
+        <input
+          name="username"
+          placeholder="username"
+          value={this.state.username}
+          onChange={this.handleChange}
+        />
+        <input
+          name="password"
+          type="password"
+          placeholder="password"
+          value={this.state.password}
+          onChange={this.handleChange}
+        />
+        <button onClick={this.handleLogin}>Login</button>
+      </div>
     );
   }
 }
