@@ -7,7 +7,8 @@ const initialState = {
   postsByCategory: [],
   postsByUserId: [],
   randPosts: [],
-  favorites: []
+  favorites: [],
+  favoritesByUserId: []
 }
 
 //Posts calls
@@ -22,8 +23,10 @@ const ADD_POST = "ADD_POST";
 const ADD_POST_COUNT = "ADD_POST_COUNT";
 const EDIT_POST = "EDIT_POST";
 const DELETE_POST = "DELETE_POST";
-const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
 
+//Favorites
+const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
+const GET_ALL_FAVORITES_BY_USER_ID = "GET_ALL_FAVORITES_BY_USER_ID"
 
 export function getAllPosts() {
   console.log("getAllPosts hit");
@@ -76,14 +79,6 @@ export function addPostCount(user_id) {
   }
 }
 
-export function addToFavorites(post_id) {
-  console.log(post_id)
-  return {
-    type:ADD_TO_FAVORITES,
-    payload: Axios.post(`/api/favorites/${post_id}`)
-  }
-}
-
 export function editPost(post_id, pet_name) {
   return {
     type: EDIT_POST,
@@ -98,6 +93,21 @@ export function deletePost(post_id) {
   }
 }
 
+
+export function addToFavorites(post_id) {
+  console.log(post_id)
+  return {
+    type:ADD_TO_FAVORITES,
+    payload: Axios.post(`/api/favorites/${post_id}`)
+  }
+}
+
+export function getAllFavoritesByUserId(user_id) {
+  return {
+    type: GET_ALL_FAVORITES_BY_USER_ID,
+    payload: Axios.get(`/api/favorites/${user_id}`)
+  }
+}
 
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
@@ -181,24 +191,6 @@ export default function reducer(state = initialState, action) {
         posts: payload.data
       }
     }
-
-    case `${ADD_TO_FAVORITES}_PENDING`: {
-      return {
-          ...state,
-            loading: true
-      }
-    }
-
-    case `${ADD_TO_FAVORITES}_FULFILLED`: {
-      return {
-          ...state,
-            loading: false,
-            favorites: payload.data
-      }
-    }
-
-  
-
     case `${ADD_POST_COUNT}_PENDING`: {
       return {
         ...state,
@@ -237,7 +229,38 @@ export default function reducer(state = initialState, action) {
         posts: payload.data
       }
     }
+
+    case `${GET_ALL_FAVORITES_BY_USER_ID}_PENDING`: {
+      return {
+        ...state,
+        loading: true
+      }
+    }
+    case `${GET_ALL_FAVORITES_BY_USER_ID}_FULFILLED`: {
+      return {
+        ...state,
+        loading: false,
+        favoritesByUserId: payload.data
+      }
+    }
+    case `${ADD_TO_FAVORITES}_PENDING`: {
+      return {
+          ...state,
+            loading: true
+      }
+    }
+    case `${ADD_TO_FAVORITES}_FULFILLED`: {
+      return {
+          ...state,
+            loading: false,
+            favorites: payload.data
+      }
+    }
+    
     default:
       return state;
   }
+
+
+  
 }

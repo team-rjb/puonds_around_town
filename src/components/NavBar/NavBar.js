@@ -59,6 +59,7 @@ class NavBar extends React.Component {
             <li>
               <img className="responsive-menu"
                 onClick={this.handleClick}
+                className="responsive-menu"
                 src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png"
                 alt="menu icon"
               />
