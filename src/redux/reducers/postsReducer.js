@@ -12,6 +12,7 @@ const initialState = {
 }
 
 //Posts calls
+
 const GET_ALL_POSTS = "GET_ALL_POSTS";
 const GET_CURRENT_POST = "GET_CURRENT_POST"
 const GET_ALL_POSTS_BY_USER_ID = "GET_ALL_POSTS_BY_USER_ID"
