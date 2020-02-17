@@ -1,5 +1,6 @@
 import postsReducer from "../redux/reducers/postsReducer";
 
+//Rachael test
 const post = {
   pic: "",
   name: "",
@@ -11,7 +12,7 @@ const post = {
   rating: ""
 }
 
-
+//Rachael test
 const initialState = {
     posts: [],
     loading: false,
@@ -23,11 +24,13 @@ const initialState = {
     favoritesByUserId: []
   }
 
+  //Rachael test
   describe('post reducer', () => {
     test('should return the initial state', () => {
       expect(postsReducer(undefined, {})).toEqual(initialState);
     });
-
+    
+    // Rachael test
     test('should handle ADD_POST', () => {
       const post = {
         pic: "",
@@ -60,6 +63,7 @@ const initialState = {
       expect(postsReducer(initialState, addedPost())).toEqual(expectedState);
     });
 
+//Rachael test
     test('should return all posts', () => {
       const post1 = {
         pic: "",
@@ -102,6 +106,7 @@ const initialState = {
       expect(postsReducer(state, getAllPosts())).toEqual(state);
     });
 
+    //Rachael test
     test('should delete a post', () => {
       const post1 = {
         ...post,
@@ -139,6 +144,7 @@ const initialState = {
       expect(postsReducer(state, deletePost())).toEqual(expectedState);
     });
 
+    //Rachael test
     test('should edit a post', () => {
       const post1 = {
         ...post,
