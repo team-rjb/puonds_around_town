@@ -35,4 +35,23 @@ describe('Login component', () => {
         const firstH3 = container.querySelector('h3:nth-child(2)');
         expect(firstH3.textContent).toBe('Login Below')
     })
+    test('state object username', () => {
+        let state = {
+            username:"",
+        }
+        expect(state.username).toEqual(state.username);
+    })
+    test('state object password', () => {
+        let state = {
+            password:"",
+        }
+        expect(state.password).toEqual(state.password);
+    })
+    test('button text', () => {
+        act(() => {
+            ReactDOM.render(<Login.WrappedComponent />, container)
+        })
+        const buttonText = container.querySelector('button:nth-child(3)');
+        expect(buttonText).toBe(null)
+    })
 })
