@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { act, Simulate } from "react-dom/test-utils";
+import { act } from "react-dom/test-utils";
 import Login from "../components/Login/Login";
 
 let container = null;

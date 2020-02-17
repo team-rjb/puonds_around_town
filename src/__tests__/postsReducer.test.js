@@ -1,6 +1,6 @@
 import postsReducer from "../redux/reducers/postsReducer";
 
-//Rachael test
+
 const post = {
   pic: "",
   name: "",
@@ -12,7 +12,6 @@ const post = {
   rating: ""
 }
 
-//Rachael test
 const initialState = {
     posts: [],
     loading: false,
@@ -24,13 +23,13 @@ const initialState = {
     favoritesByUserId: []
   }
 
-  //Rachael test
+  //Rachael unit test #1
   describe('post reducer', () => {
     test('should return the initial state', () => {
       expect(postsReducer(undefined, {})).toEqual(initialState);
     });
     
-    // Rachael test
+    // Rachael unit test #2
     test('should handle ADD_POST', () => {
       const post = {
         pic: "",
@@ -63,7 +62,7 @@ const initialState = {
       expect(postsReducer(initialState, addedPost())).toEqual(expectedState);
     });
 
-//Rachael test
+//Rachael unit test #3
     test('should return all posts', () => {
       const post1 = {
         pic: "",
@@ -106,7 +105,7 @@ const initialState = {
       expect(postsReducer(state, getAllPosts())).toEqual(state);
     });
 
-    //Rachael test
+    //Rachael unit test #4
     test('should delete a post', () => {
       const post1 = {
         ...post,
@@ -144,7 +143,7 @@ const initialState = {
       expect(postsReducer(state, deletePost())).toEqual(expectedState);
     });
 
-    //Rachael test
+    //Rachael unit test #5
     test('should edit a post', () => {
       const post1 = {
         ...post,
@@ -213,4 +212,9 @@ describe('addPostCount', () => {
         expect(1).not.toBeNaN();
     })
 })
+<<<<<<< HEAD
+
+})
+=======
   })
+>>>>>>> master

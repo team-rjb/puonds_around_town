@@ -18,7 +18,7 @@ function GuestLanding() {
   //LoggedIn/IsAdmin are self-explanatory, authState is the entire state value of the authReducer
   const dispatch = useDispatch();
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
-  const isAdmin = useSelector(state => state.authReducer.isAdmin);
+  // const isAdmin = useSelector(state => state.authReducer.isAdmin);
   const authState = useSelector(state => state.authReducer);
   const posts = useSelector(state => state.postsReducer.posts);
   //This useEffect hook will pull in ALL POSTS into the postsReducer when the user lands on the guest landing page
