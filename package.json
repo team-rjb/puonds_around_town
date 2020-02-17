@@ -16,11 +16,6 @@
     "enzyme-react-16-adapter-setup": "^0.1.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
-<<<<<<< HEAD
-    "fsevents": "^1.2.11",
-=======
-    "jest-enzyme": "^7.1.2",
->>>>>>> master
     "massive": "^6.1.4",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
