@@ -25,21 +25,25 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <input
-          name="username"
-          placeholder="username"
-          value={this.state.username}
-          onChange={this.handleChange}
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-        />
-        <button onClick={this.handleLogin}>Login</button>
-      </div>
+            <h1>Pounds Around Town</h1>
+            <h3>Login Below</h3>
+            <input
+              name="username"
+              placeholder="username"
+              value={this.state.username}
+              onChange={this.handleChange}
+            />
+            <input
+              name="password"
+              type="password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+            <button onClick={this.handleLogin}>Login</button>
+          </div>
+      
+
     );
   }
 }
