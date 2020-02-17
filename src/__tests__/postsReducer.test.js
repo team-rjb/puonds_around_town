@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import postsReducer from "../redux/reducers/postsReducer";
 
 //Rachael test
@@ -182,8 +181,6 @@ const initialState = {
 
       expect(postsReducer(state, editPost())).toEqual(expectedState);
     });
-=======
-import { getCurrentPost, getAllPostsByUserId, getRandomPosts, addPostCount } from "../redux/reducers/postsReducer";
 
 //Beth Test
 describe('getCurrentPost', () => {
@@ -215,5 +212,5 @@ describe('addPostCount', () => {
         expect(NaN).toBeNaN();
         expect(1).not.toBeNaN();
     })
->>>>>>> master
 })
+  })

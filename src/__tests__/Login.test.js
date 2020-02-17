@@ -2,11 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { act, Simulate } from "react-dom/test-utils";
 import Login from "../components/Login/Login";
-import App from "../App";
-import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
-import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
 
 let container = null;
 
