@@ -9,4 +9,6 @@ const rootReducer = combineReducers({
   postsReducer
 })
 
+console.log(createStore(rootReducer).getState().postsReducer.favorites);
+
 export default createStore(rootReducer, applyMiddleware(promise))

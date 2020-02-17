@@ -18,6 +18,7 @@ class AllPosts extends Component {
 
     render() {
         const { posts } = this.props;
+        
         const postsMapped = posts.map((post, i) => {
             return (
                 <div key={i}>
