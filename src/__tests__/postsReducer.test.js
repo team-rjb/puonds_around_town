@@ -212,9 +212,5 @@ describe('addPostCount', () => {
         expect(1).not.toBeNaN();
     })
 })
-<<<<<<< HEAD
 
 })
-=======
-  })
->>>>>>> master
