@@ -3,6 +3,7 @@ import Axios from "axios";
 const initialState = {
   currentUser_id: null,
   currentUsername: null,
+  currentFirstName:"",
   currentUser: {},
   isAdmin: false,
   loading: false,
@@ -92,12 +93,13 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        user_id: payload.data.user_id,
-        username: payload.data.user,
+        currentUser_id: payload.data.user_id,
+        currentUsername: payload.data.user,
         first_name: payload.data.first_name,
         email: payload.data.email,
         isAdmin: payload.data.isAdmin,
-        org_id: payload.data.org_id
+        org_id: payload.data.org_id,
+        loggedIn: true
       }
     }
     case `${LOGIN_USER}_PENDING`: {

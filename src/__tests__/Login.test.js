@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { act } from "react-dom/test-utils";
 import Login from "../components/Login/Login";
 
-
 let container = null;
 
 beforeEach(() => {

@@ -17,6 +17,7 @@ export function Form ({ option }) {
     //handleFormSubmit is a function to submit the login/register data. it checks "option" from the LoginForm function down below
     //Option 1 is set for Login and option 2 is set for Register
     //All of this together lets us have a single login/register form that we can style 
+
 const { register, handleSubmit, errors } = useForm();
 const onSubmit = data => handleFormSubmit(data, option);
 const dispatch = useDispatch()
@@ -79,13 +80,3 @@ export function LoginForm () {
 
 
   
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)}>
-//       <input type="text" placeholder="Username" name="Username" ref={register} />
-//       <input type="text" placeholder="Password" name="Password" ref={register} />
-//       <input type="text" placeholder="Email" name="Email" ref={register({required: true, pattern: /^\S+@\S+$/i})} />
-//       <input type="text" placeholder="First Name" name="First Name" ref={register} />
-
-//       <input type="submit" />
-//     </form>
- 
