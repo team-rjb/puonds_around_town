@@ -6,7 +6,7 @@ import {
   getAllFavoritesByUserId
 } from "../../redux/reducers/postsReducer";
 import { Redirect } from "react-router-dom";
-import {LoginForm} from "../Login/Login2"
+import { LoginForm } from "../Login/Login2"
 
 function GuestLanding() {
   //The hooks below are doing the following:
@@ -38,19 +38,21 @@ function GuestLanding() {
 
 
   return (
-    <div>
-      {loggedIn ? (
-        <Redirect to="/UserProfile/" />
-      ) : (
-        <div>
-          <h1>Welcome to Pounds Around Town!</h1>
-          {/* <Login /> */}
-          <div className = 'loginForm'>
-        <LoginForm />
-        </div>
-          {/* <Register /> */}
-        </div>
-      )}
+    <div className="guest-landing-container">
+      <div className="register-login-container">
+        {loggedIn ? (
+          <Redirect to="/UserProfile/" />
+        ) : (
+            <div>
+              {/* <h1>Welcome to Pounds Around Town!</h1> */}
+              {/* <Login /> */}
+              <div className='loginForm'>
+                <LoginForm />
+              </div>
+              {/* <Register /> */}
+            </div>
+          )}
+      </div>
     </div>
   );
 }
