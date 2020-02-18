@@ -14,11 +14,11 @@
 }
 
 .register-login-container {
-    background-image: url("https://i.imgur.com/VA7nA2X.png");
+    background-image: url("https://i.imgur.com/mloiE0H.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    width : 45vw;
-    height : 43vw;
+    width : 585px;
+    height : 727px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -26,3 +26,11 @@
     align-items: center;
     z-index: 1;
 }
+
+@media screen and (max-width: 320px) {
+    .register-login-container {
+      background-image: url("https://i.imgur.com/oXhcLjw.png");
+        width: 320px;
+      height: 615px;
+    }
+  }
