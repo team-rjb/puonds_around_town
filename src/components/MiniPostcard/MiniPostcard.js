@@ -13,8 +13,8 @@ class MiniPostcard extends Component {
 
     render() {
         return (
-            <div className="dog-container">
-                <div className="dog-container-content" key={this.props.post_id}>
+            <div className="mini-dog-container">
+                <div className="mini-dog-container-content" key={this.props.post_id}>
                     <PopUp
                         user={this.props.user_id}
                         post_id={this.props.post_id}
