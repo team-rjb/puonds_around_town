@@ -5,12 +5,10 @@
 }
 
 body {
-  font-family: Nunito, Roboto, Arial, sans-serif;
-  background: #4D6FE5;
   height: 100vh;
 }
 
-#app {
+#LoginForm {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,9 +19,11 @@ body {
 }
 
 .container {
+  background: #4D6FE5;
   text-align: center;
   color: #fff;
   margin-top: 100px;
+  font-family: Nunito, Roboto, Arial, sans-serif;
 }
 
 .container > header {
@@ -209,40 +209,84 @@ body {
   background: #2e56e0;
 }
 
-header {
-  background-color: #2d2a2a;
+.nav-bar-container {
+  background-size: 100vw;
+  background-color: #54B7C4;
+  color: white;
+  text-align: center;
+  width: 100vw;
+  height: 9vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  height: 65px;
-  width: 100vw;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-bottom: #2E5E69 solid 3px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-bar-container :hover {
+  color: #F4C271;
+  cursor: pointer;
+}
+
+.logo-type {
+  text-decoration: none;
+  color: white;
+  font-size: 35px;
 }
 
 .link {
   text-decoration: none;
+  color: white;
+}
+
+.link :hover {
+  color: #F4C271;
+  cursor: pointer;
 }
 
 #site-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-right: 40px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #site-nav li {
   list-style: none;
-  margin-left: 10px;
+  margin-left: 35px;
   font-size: 25px;
   color: white;
 }
 
-#logo {
-  color: white;
-  font-size: larger;
+#menu-text :hover {
+  color: #F4C271;
+}
+
+#face_logo_w {
+  max-width: 65px;
+  max-height: 65px;
+  float: left;
+  margin-left: 40px;
+  padding: 0px;
+  margin-right: 0px;
 }
 
 .drop-down-menu, .drop-down-menu-open, .drop-down-menu-closed {
@@ -252,9 +296,6 @@ header {
   right: 0px;
   top: 75px;
   background: grey;
-  -webkit-box-align: right;
-  -ms-flex-align: right;
-  align-items: right;
   padding: 0px;
   margin: 0px;
 }

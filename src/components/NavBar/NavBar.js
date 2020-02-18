@@ -2,7 +2,8 @@ import React from "react";
 import {connect} from 'react-redux'
 import { Link } from "react-router-dom";
 import { logoutUser } from "../../redux/reducers/authReducer";
-import "./NavBar.css";
+// import "./NavBar.css";
+import face_logo_w from '../../stylesheets/design_elements/face_logo_w.svg';
 
 class NavBar extends React.Component {
   constructor() {
@@ -34,21 +35,23 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <header>
-          <Link to="/AllPosts/">
-            <h2 id="logo"> Pounds Around Town </h2>
+      // <div>
+        <header className="header">
+        <nav className="nav-bar-container">
+        <img id="face_logo_w" alt="Pounds Around Town" src={face_logo_w} />
+          <Link to="/AllPosts/" className="logo-type">
+            <h2 id="pounds-around-town"> Pounds Around Town </h2>
           </Link>
 
           <ul id="site-nav">
-            <Link to="/" className="link">
-              <li className="menu-text">GuestLanding</li>
-            </Link>
             <Link to="/AllPosts/" className="link">
-              <li className="menu-text">All Posts</li>
+              <li className="menu-text">Home</li>
             </Link>
             <Link to="/UserProfile/" className="link">
-              <li className="menu-text">User Profile</li>
+              <li className="menu-text">Profile</li>
+            </Link>
+            <Link to="/" className="link">
+              <li className="menu-text">Login</li>
             </Link>
             <Link to="/" className="link">
               <li className="menu-text" onClick={this.props.logoutUser}>
@@ -59,7 +62,7 @@ class NavBar extends React.Component {
             <li>
               <img className="responsive-menu"
                 onClick={this.handleClick}
-                className="responsive-menu"
+                // className="responsive-menu"
                 src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png"
                 alt="menu icon"
               />
@@ -89,8 +92,9 @@ class NavBar extends React.Component {
               </Link>
             </ul>
           </ul>
+          </nav>
         </header>
-      </div>
+      // </div>
     );
   }
 }
