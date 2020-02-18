@@ -1,39 +1,65 @@
-header {
-    background-color: #2d2a2a;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    height: 65px;
+ .nav-bar-container {
+    background-size: 100vw;
+    background-color: #54B7C4;
+    // float: right;
+    color: white;
+    text-align: center;
     width: 100vw;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  
+    height: 9vh;
+    align-items: center;
+    align-content: space-between;
+    display: flex;
+    flex-direction: row;
+    border-bottom: #2E5E69 solid 3px;
+    justify-content: space-between;
+    :hover {
+        color:#F4C271;
+        cursor: pointer;
+    }
+}
+
+.logo-type {
+  text-decoration: none;
+  color: white;
+  font-size: 35px;
+}
+
   .link {
     text-decoration: none;
+    color: white;
+    :hover {
+      color: #F4C271;
+      cursor: pointer;
+    }
   }
-  
-  
-  
+
   #site-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
+    flex-direction: row;
+    margin-right: 40px;
+    justify-content: space-between;;
   }
   
   #site-nav li {
     list-style: none;
-    margin-left: 10px;
+    margin-left: 35px;
     font-size: 25px;
     color: white;
   }
+
+  #menu-text {
+    :hover {
+      color: #F4C271;
+    }
+  }
   
-  #logo {
-    color: white;
-    font-size: larger;
+  #face_logo_w {
+    max-width: 65px;
+    max-height: 65px;
+    float: left;
+    margin-left: 40px;
+    padding: 0px;
+    margin-right: 0px;
   }
   
   .drop-down-menu, .drop-down-menu-open, .drop-down-menu-closed {
@@ -43,9 +69,6 @@ header {
     right: 0px;
     top: 75px;
     background: grey;
-    -webkit-box-align: right;
-        -ms-flex-align: right;
-            align-items: right;
     padding: 0px;
     margin: 0px;
   }
@@ -114,7 +137,6 @@ header {
   @media (max-width: 700px) {
     .responsive-menu {
       display: block;
-      -webkit-transition: width 1s, height 1s;
       transition: width 1s, height 1s;
     }
     .menu-text {

@@ -1,5 +1,4 @@
 import React from 'react'
-// import './Login2.scss'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form';
 import { loginUser } from "../../redux/reducers/authReducer";
@@ -18,7 +17,7 @@ export function Form ({ option }) {
     //Option 1 is set for Login and option 2 is set for Register
     //All of this together lets us have a single login/register form that we can style 
 
-const { register, handleSubmit, errors } = useForm();
+const { register, handleSubmit } = useForm();
 const onSubmit = data => handleFormSubmit(data, option);
 const dispatch = useDispatch()
 const handleFormSubmit = (data, option) => {
