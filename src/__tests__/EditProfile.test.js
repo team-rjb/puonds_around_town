@@ -27,3 +27,28 @@ describe('Edit Profile component', () => {
     });
 
 })
+
+ //Jason Test 1
+describe('Edit Profile component', () => {
+   
+    test('H2 Text', () => {
+        act(() => {
+            ReactDOM.render(<EditProfile />, container)
+        })
+        const firstH2 = container.querySelector('h2:nth-child(2)');
+        expect(firstH2.textContent).toBe('Finish Me!')
+    });
+
+})
+ //Jason Test 2
+describe('Edit Profile component', () => {
+   
+    test('H2 Text', () => {
+        act(() => {
+            ReactDOM.render(<EditProfile />, container)
+        })
+        const firstH3 = container.querySelector('h3:nth-child(3)');
+        expect(firstH3.textContent).toBe('I do nothing!')
+    });
+
+})

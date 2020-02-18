@@ -1,3 +1,5 @@
+
+//Beth Test
 describe('getCurrentUser', () => {
     test('passes when value is NaN', () => {
         expect(NaN).toBeNaN();
