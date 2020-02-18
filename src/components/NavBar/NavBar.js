@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from 'react-redux'
 import { Link } from "react-router-dom";
 import { logoutUser } from "../../redux/reducers/authReducer";
-import "./NavBar.css";
+// import "./NavBar.css";
 
 class NavBar extends React.Component {
   constructor() {

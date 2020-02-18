@@ -1,5 +1,5 @@
 import React from 'react'
-import './Login2.scss'
+// import './Login2.scss'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form';
 import { loginUser } from "../../redux/reducers/authReducer";
