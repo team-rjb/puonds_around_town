@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import Login from "../Login/Login";
-import Register from "../Register/Register";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllPosts,
@@ -8,7 +6,7 @@ import {
   getAllFavoritesByUserId
 } from "../../redux/reducers/postsReducer";
 import { Redirect } from "react-router-dom";
-import {LoginForm} from "../Login/Login2"
+import { LoginForm } from "../Login/Login2"
 
 function GuestLanding() {
   //The hooks below are doing the following:
@@ -18,9 +16,7 @@ function GuestLanding() {
   //LoggedIn/IsAdmin are self-explanatory, authState is the entire state value of the authReducer
   const dispatch = useDispatch();
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
-  // const isAdmin = useSelector(state => state.authReducer.isAdmin);
   const authState = useSelector(state => state.authReducer);
-  const posts = useSelector(state => state.postsReducer.posts);
   //This useEffect hook will pull in ALL POSTS into the postsReducer when the user lands on the guest landing page
   //Once a user is marked "logged in" the hook will run again and pull
   //All posts created by that userId (this gives us an array of posts to display to admins)
@@ -42,19 +38,21 @@ function GuestLanding() {
 
 
   return (
-    <div>
-      {loggedIn ? (
-        <Redirect to="/UserProfile/" />
-      ) : (
-        <div>
-          <h1>Welcome to Pounds Around Town!</h1>
-          {/* <Login /> */}
-          <div className = 'loginForm'>
-        <LoginForm />
-        </div>
-          {/* <Register /> */}
-        </div>
-      )}
+    <div className="guest-landing-container">
+      <div className="register-login-container">
+        {loggedIn ? (
+          <Redirect to="/UserProfile/" />
+        ) : (
+            <div>
+              {/* <h1>Welcome to Pounds Around Town!</h1> */}
+              {/* <Login /> */}
+              <div className='loginForm'>
+                <LoginForm />
+              </div>
+              {/* <Register /> */}
+            </div>
+          )}
+      </div>
     </div>
   );
 }
