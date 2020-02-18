@@ -1,17 +1,15 @@
  .nav-bar-container {
     background-size: 100vw;
     background-color: #54B7C4;
-    // float: right;
     color: white;
     text-align: center;
     width: 100vw;
     height: 9vh;
     align-items: center;
-    align-content: space-between;
     display: flex;
     flex-direction: row;
-    border-bottom: #2E5E69 solid 3px;
     justify-content: space-between;
+    border-bottom: #2E5E69 solid 3px;
     :hover {
         color:#F4C271;
         cursor: pointer;
@@ -23,6 +21,8 @@
   color: white;
   font-size: 35px;
 }
+
+
 
   .link {
     text-decoration: none;
@@ -36,8 +36,12 @@
   #site-nav {
     display: flex;
     flex-direction: row;
-    margin-right: 40px;
-    justify-content: space-between;;
+    margin-left: 0px;
+    justify-content: space-between;
+    :hover {
+      color: #F4C271;
+      cursor: pointer;
+    }
   }
   
   #site-nav li {
