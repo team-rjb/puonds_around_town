@@ -1,4 +1,51 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
+.guest-landing-container {
+  background-image: url("https://i.imgur.com/sjinFJb.png");
+  background-size: 100vw;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: -1;
+}
+
+.register-login-container {
+  background-image: url("https://i.imgur.com/VA7nA2X.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 45vw;
+  height: 43vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
