@@ -2,7 +2,9 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MiniPostcard from '../MiniPostcard/MiniPostcard'
-import AddPost from '../AddPost/AddPost'
+import AddForm from '../AddPost/AddPost2'
+// import { LoginForm } from '../Login/Login2'
+
 export default function UserProfile() {
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
   const isAdmin = useSelector(state => state.authReducer.isAdmin);
@@ -54,6 +56,7 @@ export default function UserProfile() {
 
 
   return (
+<<<<<<< HEAD
     <div id="profile-main">
       <div>
         {loggedIn ? (
@@ -78,6 +81,23 @@ export default function UserProfile() {
           </div>
         ) : (
             <Redirect to="/" />
+=======
+    <div>
+      {loggedIn ? (
+        <div>
+          {isAdmin ? (
+            
+            <div>
+              <h1>Admin Profile</h1>
+              <AddForm />
+               {postsMapped}
+            </div>
+          ) : (
+            <div>
+            <h1>User Profile</h1>
+            {favoritesMapped}
+            </div>
+>>>>>>> master
           )}
       </div>
     </div>
