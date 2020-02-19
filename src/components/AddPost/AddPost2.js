@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import { addPost } from "../../redux/reducers/postsReducer";
+import { addPost, getAllPosts, getAllPostsByUserId } from "../../redux/reducers/postsReducer";
 
 
 export default function AddForm() {
@@ -26,6 +26,8 @@ export default function AddForm() {
     console.log(addPostData);
         dispatch(addPost(addPostData))
         console.log("addingPost")
+        dispatch(getAllPosts())
+        dispatch(getAllPostsByUserId());
     
   };
 
