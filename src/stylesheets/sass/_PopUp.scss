@@ -1,12 +1,20 @@
-#puppy-div {
-    // border: 5px solid greenyellow;
-    background-color: lightgrey;
-    width: 51vw;
-}
+// #puppy-div {
+//     background-color: lightgrey;
+//     width: 75vw;
+//     height: 75vh;
+// }
 
 .dog-image {
     width: 396px;
     height: 400px;
     margin-bottom: 20px;
     object-fit: cover;
+}
+
+.popup-content {
+    border: none;
+    padding: 0px;
+    background: none;
+    width: 0;
+    height: 0;
 }

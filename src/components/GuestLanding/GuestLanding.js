@@ -34,6 +34,7 @@ function GuestLanding() {
       dispatch(getAllFavoritesByUserId());
       dispatch(getAllPostsByUserId());
     }
+    //eslint-disable-next-line
   }, [loggedIn]);
 
 
