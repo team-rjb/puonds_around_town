@@ -1,13 +1,10 @@
-@import '~antd/dist/antd.css';
 @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
-
+@import '~antd/dist/antd.css';
 body {
-
   background-image: url("https://i.imgur.com/sjinFJb.png");
   background-size: 100%;
   background-repeat: repeat;
   font-family: 'Noto Sans JP', sans-serif;
-  color: #666666;
 }
 
 #all-posts-main {

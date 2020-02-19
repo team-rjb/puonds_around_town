@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PopUp from '../PopUp/PopUp';
 import ModalPop from "../Modal/Modal"
 
 class MiniPostcard extends Component {
@@ -18,7 +17,6 @@ class MiniPostcard extends Component {
                 <div className="mini-dog-container-content" key={this.props.post_id}>
                     <section>
                       <ModalPop 
-                        pic={this.props.pic} 
                         user={this.props.user_id}
                         post_id={this.props.post_id}
                         pic={this.props.pic}
