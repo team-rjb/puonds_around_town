@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { addPost, getAllPosts, getAllPostsByUserId } from "../../redux/reducers/postsReducer";
 
-
 export default function AddForm() {
 
   const { register, handleSubmit, errors } = useForm();
@@ -28,7 +27,6 @@ export default function AddForm() {
         console.log("addingPost")
         dispatch(getAllPosts())
         dispatch(getAllPostsByUserId());
-    
   };
 
   const checkUploadResult = (error, resultEvent) => {
@@ -52,6 +50,8 @@ export default function AddForm() {
             //   checkUploadResult(error, result)
           })}
 
+
+          
   return (
       <div className="addPostDiv">
     <button className="add-post-button-1" name="img" onClick={() => widget.open()}>Add a picture</button>
@@ -74,6 +74,7 @@ export default function AddForm() {
 
       <input type="submit" />
     </form>
+
     </div>
   );
 }
