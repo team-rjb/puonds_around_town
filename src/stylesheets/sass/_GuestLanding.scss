@@ -1,13 +1,9 @@
 .guest-landing-container {
-    background-image: url("https://i.imgur.com/sjinFJb.png");
-    background-size: 100vw;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    background-repeat: repeat-x;
-    background-repeat: repeat-y;
     align-items: center;
     justify-content: center;
     z-index: -1;

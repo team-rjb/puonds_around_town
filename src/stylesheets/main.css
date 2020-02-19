@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
-#all-posts-main {
+body {
   background-image: url("https://i.imgur.com/sjinFJb.png");
   background-size: 100%;
+  background-repeat: repeat;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+#all-posts-main {
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
@@ -12,7 +17,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-repeat: repeat;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -45,13 +49,11 @@
 }
 
 .all-posts-container {
-  width: 550px;
+  width: 396px;
   margin: 30px;
 }
 
 .guest-landing-container {
-  background-image: url("https://i.imgur.com/sjinFJb.png");
-  background-size: 100vw;
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
@@ -62,8 +64,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 0 auto;
-  background-repeat: repeat-x;
-  background-repeat: repeat-y;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -333,7 +333,7 @@ body {
 
 .mini-dog-container-content {
   width: 100%;
-  height: 65vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,6 +346,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mini-dog-info {
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 15px;
 }
 
 .dog-name {
@@ -394,10 +404,6 @@ body {
   cursor: pointer;
 }
 
-#garbage-div {
-  width: 100%;
-}
-
 .logo-type {
   text-decoration: none;
   color: white;
@@ -439,6 +445,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-left: 0px;
+  margin-right: 40px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -557,7 +564,11 @@ body {
 }
 
 .dog-image {
-  max-width: 100%;
+  width: 396px;
+  height: 400px;
+  margin-bottom: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .dog-container {
@@ -574,5 +585,58 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#profile-main {
+  width: 100vw;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  z-index: -1;
+}
+
+.profile-header {
+  font-size: 50px;
+  margin-top: 25px;
+  color: #666666;
+  text-align: center;
+}
+
+#profile-page {
+  height: 100%;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile-posts-map {
+  width: 396px;
+  margin: 30px;
 }
 /*# sourceMappingURL=main.css.map */
