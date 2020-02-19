@@ -1,2 +1,2 @@
 SELECT * FROM posts
-WHERE orgy_name = $1;
+WHERE org_name = $1;

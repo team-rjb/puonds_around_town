@@ -47,7 +47,7 @@ async function getRandomPosts(req, res) {
 
 // Add/Edit/Delete Post Calls
 async function addPost(req, res) {
-  const { pic, pet_name, breed, age, gender, fixed, bio, rating } = req.body;
+  const { pic, post_name, breed, age, gender, fixed, bio, rating } = req.body;
   const user_id = req.session.user.user_id;
   const org_id = req.session.user.org_id;
 
@@ -56,7 +56,7 @@ async function addPost(req, res) {
   const addedPost = await db.posts.addPost([
     user_id,
     pic,
-    pet_name,
+    post_name,
     breed,
     age,
     gender,
