@@ -262,7 +262,7 @@ body {
   color: white;
   text-align: center;
   width: 100vw;
-  height: 9vh;
+  height: 13vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -284,12 +284,30 @@ body {
   cursor: pointer;
 }
 
+#garbage-div {
+  width: 100%;
+}
+
 .logo-type {
   text-decoration: none;
   color: white;
   font-size: 35px;
   margin-left: 0px;
   padding: 0px;
+}
+
+#logo-box {
+  width: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#pounds-around-town {
+  padding-top: 20px;
 }
 
 .link {

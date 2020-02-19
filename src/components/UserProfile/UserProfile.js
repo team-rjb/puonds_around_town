@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MiniPostcard from '../MiniPostcard/MiniPostcard'
+import AddPost from "../AddPost/AddPost";
 
 export default function UserProfile() {
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
@@ -59,6 +60,8 @@ const favoritesMapped = userFavorites.map((post, i) => {
             
             <div>
               <h1>Admin Profile</h1>
+              < AddPost />
+            
                {postsMapped}
             </div>
           ) : (
