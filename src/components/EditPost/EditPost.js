@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { editPost, deletePost } from "../../redux/reducers/postsReducer";
+import { editPost, deletePost, getAllPosts, getAllPostsByUserId } from "../../redux/reducers/postsReducer";
 import { useForm } from "react-hook-form";
 
 export default function EditPost(props) {
@@ -28,6 +28,8 @@ export default function EditPost(props) {
     console.log("handleEditPost, editPost.js", post_id);
     dispatch(editPost(post_id, updated_post));
     setEditState(false);
+    dispatch(getAllPosts())
+        dispatch(getAllPostsByUserId())
     // props.setView("profile");
   };
 
@@ -36,6 +38,8 @@ export default function EditPost(props) {
     console.log("handleDeletePost, editPost.js", post_id);
     dispatch(deletePost(post_id));
     setDeleteState(false);
+    dispatch(getAllPosts())
+        dispatch(getAllPostsByUserId())
     // props.setView("profile");
   };
   const checkUploadResult = (error, resultEvent) => {
