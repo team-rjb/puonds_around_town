@@ -1,12 +1,16 @@
-#all-posts-main {
+body {
     background-image: url('https://i.imgur.com/sjinFJb.png');
     background-size: 100%;
+    background-repeat: repeat;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+#all-posts-main {
     width: 100vw;
     height: 100vh;
     display: flex;
     margin: 0 auto;
     flex-direction: column;
-    background-repeat: repeat;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -24,6 +28,6 @@
 }
 
 .all-posts-container {
-    width: 550px;
+    width: 396px;
     margin: 30px;
 }

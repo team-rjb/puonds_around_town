@@ -16,9 +16,6 @@
     }
 }
 
-#garbage-div{
-  width: 100%;
-}
 .logo-type {
   text-decoration: none;
   color: white;
@@ -50,6 +47,7 @@
     display: flex;
     flex-direction: row;
     margin-left: 0px;
+    margin-right: 40px;
     justify-content: space-between;
     :hover {
       color: #F4C271;

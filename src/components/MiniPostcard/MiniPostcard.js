@@ -15,6 +15,7 @@ class MiniPostcard extends Component {
         return (
             <div className="mini-dog-container">
                 <div className="mini-dog-container-content" key={this.props.post_id}>
+                    <section>
                     <PopUp
                         user={this.props.user_id}
                         post_id={this.props.post_id}
@@ -29,9 +30,12 @@ class MiniPostcard extends Component {
                         bio={this.props.bio}
                         isAdmin={this.props.isAdmin}
                     />
+                    </section>
+                    <section className="mini-dog-info">
                     <h5 className="dog-name">{this.props.post_name}</h5>
                     <h5 className="dog-gender">{this.props.gender}</h5>
                     <h5 className="dog-fixed">Fixed: {this.props.fixed}</h5>
+                    </section>
                 </div>
             </div>
         )
