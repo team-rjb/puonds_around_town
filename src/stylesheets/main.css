@@ -1,4 +1,54 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
+#all-posts-main {
+  background-image: url("https://i.imgur.com/sjinFJb.png");
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-repeat: repeat;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  z-index: -1;
+}
+
+#all-posts-page {
+  height: 100%;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.all-posts-container {
+  width: 550px;
+  margin: 30px;
+}
+
 .guest-landing-container {
   background-image: url("https://i.imgur.com/sjinFJb.png");
   background-size: 100vw;
@@ -136,6 +186,7 @@ body {
 
 .headline {
   font-size: 40px;
+  font-family: 'Noto Sans JP', sans-serif;
   margin-bottom: 30px;
 }
 
@@ -271,6 +322,48 @@ body {
 .btn-submit-form:active, .btn-submit-form:focus {
   outline: none;
   background: #2E5E69;
+}
+
+.mini-dog-container {
+  width: 400px;
+  height: 600px;
+  border: 2px solid #666666;
+  background-color: #EAEAEA;
+}
+
+.mini-dog-container-content {
+  width: 100%;
+  height: 65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dog-name {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 25px;
+  line-height: 3rem;
+}
+
+.dog-gender {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 20px;
+  line-height: 2rem;
+}
+
+.dog-fixed {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 20px;
+  line-height: 2rem;
 }
 
 .nav-bar-container {
@@ -443,6 +536,10 @@ body {
 #puppy-div {
   background-color: lightgrey;
   width: 51vw;
+}
+
+.dog-image {
+  max-width: 100%;
 }
 
 .dog-container {

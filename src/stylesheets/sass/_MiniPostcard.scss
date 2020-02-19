@@ -1,0 +1,33 @@
+.mini-dog-container {
+    width: 400px;
+    height: 600px;
+    border: 2px solid #666666;
+    background-color: #EAEAEA;
+}
+
+.mini-dog-container-content {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.dog-name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 25px;
+    line-height: 3rem;
+}
+
+.dog-gender {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    line-height: 2rem;
+}
+
+.dog-fixed {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    line-height: 2rem;
+}
