@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
+const path = require('path');
 
 //Server assignment deconstruction
 const app = express();
@@ -19,6 +20,7 @@ const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
 // const auth = require('./middleware/authMiddleware');
 app.use(express.static(__dirname + "/../public"));
 app.use(express.json());
+app.use( express.static( `${__dirname}/../build` ) );
 
 // Session
 app.use(
@@ -77,6 +79,12 @@ app.delete("/api/posts/:post_id", deletePost);
 //Favorites
 app.post("/api/favorites/:post_id", addToFavorites);
 app.get("/api/favorites/:user_id", getAllFavoritesByUserId);
+
+
+//point your server to the front end static files
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 app.listen(SERVER_PORT, () => {
   console.log(`LOFI RADIO STATION #: ${SERVER_PORT}`);
