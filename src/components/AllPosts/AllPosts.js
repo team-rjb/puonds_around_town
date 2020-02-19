@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import MiniPostcard from "../MiniPostcard/MiniPostcard";
 
 
+
 class AllPosts extends Component {
     constructor() {
         super();
@@ -37,6 +38,7 @@ class AllPosts extends Component {
                         isAdmin={this.props.isAdmin}
                     />
                 </div>
+               
             )
         })
         return (
