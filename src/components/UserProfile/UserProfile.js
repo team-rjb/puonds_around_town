@@ -3,6 +3,9 @@ import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MiniPostcard from '../MiniPostcard/MiniPostcard'
 import AddPost from '../AddPost/AddPost'
+import AddForm from '../AddPost/AddPost copy'
+// import { LoginForm } from '../Login/Login2'
+
 export default function UserProfile() {
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
   const isAdmin = useSelector(state => state.authReducer.isAdmin);
@@ -61,7 +64,7 @@ const favoritesMapped = userFavorites.map((post, i) => {
             
             <div>
               <h1>Admin Profile</h1>
-              <AddPost />
+              <AddForm />
                {postsMapped}
             </div>
           ) : (
