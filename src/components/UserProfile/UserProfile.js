@@ -77,3 +77,4 @@ const favoritesMapped = userFavorites.map((post, i) => {
     </div>
   );
 }
+
