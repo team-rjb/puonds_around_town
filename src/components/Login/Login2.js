@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form';
 import { loginUser } from "../../redux/reducers/authReducer";
 import { registerUser } from "../../redux/reducers/authReducer";
-// import "./Login2.css";
 
 
 

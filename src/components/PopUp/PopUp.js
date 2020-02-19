@@ -5,7 +5,7 @@ import PostCard from '../PostCard/PostCard';
 
 export default (props) => (
     <Popup trigger={<img className="dog-image" src={props.pic} alt='Dog'></img>} position="center center">
-        <div>
+        <div id="puppy-div">
             <PostCard
                 user={props.user_id}
                 post_id={props.post_id}

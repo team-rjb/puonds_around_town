@@ -2,7 +2,6 @@ import React from "react";
 import {connect} from 'react-redux'
 import { Link } from "react-router-dom";
 import { logoutUser } from "../../redux/reducers/authReducer";
-// import "./NavBar.css";
 import face_logo_w from '../../stylesheets/design_elements/face_logo_w.svg';
 
 class NavBar extends React.Component {
@@ -35,13 +34,16 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      // <div>
+      
         <header className="header">
         <nav className="nav-bar-container">
+          <div id="logo-box">
         <img id="face_logo_w" alt="Pounds Around Town" src={face_logo_w} />
           <Link to="/AllPosts/" className="logo-type">
             <h2 id="pounds-around-town"> Pounds Around Town </h2>
-          </Link>
+          </Link> 
+          </div>
+        
 
           <ul id="site-nav">
             <Link to="/AllPosts/" className="link">

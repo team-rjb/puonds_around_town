@@ -1,27 +1,40 @@
  .nav-bar-container {
     background-size: 100vw;
     background-color: #54B7C4;
-    // float: right;
     color: white;
     text-align: center;
     width: 100vw;
-    height: 9vh;
+    height: 13vh;
     align-items: center;
-    align-content: space-between;
     display: flex;
     flex-direction: row;
-    border-bottom: #2E5E69 solid 3px;
     justify-content: space-between;
+    border-bottom: #2E5E69 solid 3px;
     :hover {
         color:#F4C271;
         cursor: pointer;
     }
 }
 
+#garbage-div{
+  width: 100%;
+}
 .logo-type {
   text-decoration: none;
   color: white;
   font-size: 35px;
+  margin-left: 0px;
+  padding: 0px;
+}
+
+#logo-box{
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+#pounds-around-town {
+  padding-top: 20px;
 }
 
   .link {
@@ -36,8 +49,12 @@
   #site-nav {
     display: flex;
     flex-direction: row;
-    margin-right: 40px;
-    justify-content: space-between;;
+    margin-left: 0px;
+    justify-content: space-between;
+    :hover {
+      color: #F4C271;
+      cursor: pointer;
+    }
   }
   
   #site-nav li {
