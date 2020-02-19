@@ -1,0 +1,29 @@
+#all-posts-main {
+    background-image: url('https://i.imgur.com/sjinFJb.png');
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    background-repeat: repeat;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: -1;
+}
+
+#all-posts-page {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.all-posts-container {
+    width: 550px;
+    margin: 30px;
+}

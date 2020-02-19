@@ -13,16 +13,16 @@ class AllPosts extends Component {
     }
 
     componentDidMount() {
-        
+
     }
 
 
     render() {
         const { posts } = this.props;
-        
+
         const postsMapped = posts.map((post, i) => {
             return (
-                <div key={i}>
+                <div key={i} className="all-posts-container">
                     <MiniPostcard
                         user={post.user_id}
                         post_id={post.post_id}
@@ -42,8 +42,10 @@ class AllPosts extends Component {
             )
         })
         return (
-            <div>
-                {postsMapped}
+            <div id="all-posts-main">
+                <div id="all-posts-page">
+                    {postsMapped}
+                </div>
             </div>
         )
     }

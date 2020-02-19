@@ -31,7 +31,7 @@ class MiniPostcard extends Component {
                     />
                     <h5 className="dog-name">{this.props.post_name}</h5>
                     <h5 className="dog-gender">{this.props.gender}</h5>
-                    <h5 className="dog-fixed">{this.props.fixed}</h5>
+                    <h5 className="dog-fixed">Fixed: {this.props.fixed}</h5>
                 </div>
             </div>
         )

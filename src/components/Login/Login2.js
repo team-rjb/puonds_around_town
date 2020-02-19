@@ -65,7 +65,7 @@ export function LoginForm () {
 	
 	return (
 		<div className='container'>
-			
+			<h1 className="headline">Pounds Around Town</h1>
 			<ul className='options'>
 				<li className={option === 1 ? 'active' : ' '} onClick={() => setOption(1)}>Sign in</li>
 				<li className={option === 2 ? 'active' : ' '} onClick={() => setOption(2)}>Sign up</li>
