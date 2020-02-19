@@ -61,7 +61,6 @@ export default function UserProfile() {
         {loggedIn ? (
           <div>
             {isAdmin ? (
-
               <div>
                 <h1 className="profile-header">Admin Profile</h1>
                 <AddForm />

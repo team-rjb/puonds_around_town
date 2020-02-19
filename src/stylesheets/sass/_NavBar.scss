@@ -75,7 +75,7 @@
     float: left;
     margin-left: 40px;
     padding: 0px;
-    margin-right: 0px;
+    margin-right: 5px;
   }
   
   .drop-down-menu, .drop-down-menu-open, .drop-down-menu-closed {
@@ -159,4 +159,23 @@
       display: none;
     }
   }
+
+  @media screen and (max-width: 320px) {
+    #face_logo_w {
+      max-width: 45px;
+      max-height: 45px;
+      float: left;
+      margin-left: 20px;
+      padding: 0px;
+      margin-right: 5px;
+      }
+    .logo-type {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    margin-left: 0px;
+    padding: 0px;
+      }
+  }
+
   /*# sourceMappingURL=NavBar.css.map */
