@@ -2,8 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MiniPostcard from '../MiniPostcard/MiniPostcard'
-import AddPost from '../AddPost/AddPost'
-import AddForm from '../AddPost/AddPost copy'
+import AddForm from '../AddPost/AddPost2'
 // import { LoginForm } from '../Login/Login2'
 
 export default function UserProfile() {
