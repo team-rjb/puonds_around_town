@@ -6,7 +6,7 @@ import { addPost } from "../../redux/reducers/postsReducer";
 
 export default function AddForm() {
 
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const [ link, setLink ] = useState("")
   const dispatch = useDispatch()
   const onSubmit = data => handleFormSubmit(data);

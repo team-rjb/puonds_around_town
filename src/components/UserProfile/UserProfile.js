@@ -56,16 +56,14 @@ export default function UserProfile() {
 
 
   return (
-<<<<<<< HEAD
     <div id="profile-main">
       <div>
         {loggedIn ? (
           <div>
             {isAdmin ? (
-
               <div>
                 <h1 className="profile-header">Admin Profile</h1>
-                <AddPost />
+                <AddForm />
                 <section id="profile-page">
                   {postsMapped}
                 </section>
@@ -81,23 +79,6 @@ export default function UserProfile() {
           </div>
         ) : (
             <Redirect to="/" />
-=======
-    <div>
-      {loggedIn ? (
-        <div>
-          {isAdmin ? (
-            
-            <div>
-              <h1>Admin Profile</h1>
-              <AddForm />
-               {postsMapped}
-            </div>
-          ) : (
-            <div>
-            <h1>User Profile</h1>
-            {favoritesMapped}
-            </div>
->>>>>>> master
           )}
       </div>
     </div>

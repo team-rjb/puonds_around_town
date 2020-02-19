@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PopUp from '../PopUp/PopUp';
+// import collarborder from '../../stylesheets/design_elements/dog-collar-border.png';
 
 class MiniPostcard extends Component {
     constructor() {
@@ -16,6 +17,7 @@ class MiniPostcard extends Component {
             <div className="mini-dog-container">
                 <div className="mini-dog-container-content" key={this.props.post_id}>
                     <section>
+                            {/* <img className="collar-border"src={collarborder} /> */}
                     <PopUp
                         user={this.props.user_id}
                         post_id={this.props.post_id}
