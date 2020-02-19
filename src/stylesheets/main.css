@@ -1,5 +1,8 @@
+@import '~antd/dist/antd.css';
 @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
+
 body {
+
   background-image: url("https://i.imgur.com/sjinFJb.png");
   background-size: 100%;
   background-repeat: repeat;
