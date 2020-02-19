@@ -11,7 +11,7 @@ class AddPost extends Component {
         super();
         this.state = {
             pic: "",
-            name: "",
+            post_name: "",
             breed: "",
             age: "",
             gender: "",
@@ -27,9 +27,9 @@ class AddPost extends Component {
     }
 
     handleAddPost = () => {
-        const { pic, name, breed, age, gender, fixed, bio, rating } = this.state;
+        const { pic, post_name, breed, age, gender, fixed, bio, rating } = this.state;
         const { addPost } = this.props;
-        addPost({ pic, name, breed, age, gender, fixed, bio, rating })
+        addPost({ pic, post_name, breed, age, gender, fixed, bio, rating })
     }
 
     checkUploadResult = (error, resultEvent) => {
@@ -59,7 +59,7 @@ class AddPost extends Component {
                     <div className="form-3">
                         <h1>Add a Dog To Your Shelter</h1>
                         <button className="add-post-button-1" name="img" onClick={() => widget.open()}>Add a picture</button>
-                        <input className="input-field" name="name" placeholder="Name" value={this.state.caption} onChange={this.handleChange} />
+                        <input className="input-field" name="post_name" placeholder="Name" value={this.state.caption} onChange={this.handleChange} />
                         <input className="input-field" name="breed" placeholder="Breed" value={this.state.caption} onChange={this.handleChange} />
                         <input className="input-field" name="age" placeholder="Age" value={this.state.caption} onChange={this.handleChange} />
                         <input className="input-field" name="gender" placeholder="Gender" value={this.state.caption} onChange={this.handleChange} />

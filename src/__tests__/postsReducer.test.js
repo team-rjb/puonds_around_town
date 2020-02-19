@@ -1,4 +1,4 @@
-import postsReducer from "../redux/reducers/postsReducer";
+import postsReducer, { getAllPostsByUserId } from "../redux/reducers/postsReducer";
 
 
 const post = {
@@ -214,3 +214,112 @@ describe('addPostCount', () => {
 })
 
 })
+
+//Jason Test
+test('should return all posts by user Id', () => {
+  const state = {
+    posts: [],
+    loading: false,
+    currentPost_id: 0,
+    postsByCategory: [],
+    postsByUserId: [],
+    randPosts: [],
+    favorites: [],
+    favoritesByUserId: []
+  }
+
+  let getAllPostsByUserId = () => ({
+    type: "GET_ALL_POSTS_BY_USER_ID_FULFILLED",
+    payload: {
+      data: state.postsByUserId
+    }
+    
+  })
+
+  expect(postsReducer(state, getAllPostsByUserId())).toEqual(state);
+});
+
+//Jason Test
+test('should return random posts', () => {
+
+  const state = {
+    posts: [],
+    loading: false,
+    currentPost_id: 0,
+    postsByCategory: [],
+    postsByUserId: [],
+    randPosts: [],
+    favorites: [],
+    favoritesByUserId: []
+  }
+
+  let getRandomPosts = () => ({
+    type: "GET_RANDOM_POSTS_FULFILLED",
+    payload: {
+      data: state.randPosts
+    }
+    
+  })
+
+  expect(postsReducer(state, getRandomPosts())).toEqual(state);
+});
+
+//Jason Test
+test('should return loading true', () => {
+
+  const state = {
+    posts: [],
+    loading: true,
+    currentPost_id: 0,
+    postsByCategory: [],
+    postsByUserId: [],
+    randPosts: [],
+    favorites: [],
+    favoritesByUserId: []
+  }
+  let getRandomPosts = () => ({
+    type: "GET_RANDOM_POSTS_PENDING",
+    payload: {
+      loading: true
+    }
+  })
+  expect(postsReducer(state, getRandomPosts())).toEqual(state);
+})
+
+//Jason Test
+test('should return loading false', () => {
+  const state = {
+    loading: false
+  }
+  let getRandomPosts = () => ({
+    type: "GET_ALL_POSTS_FULFILLED",
+    payload: {
+      loading: false
+    }
+  })
+  expect(postsReducer(state, getRandomPosts())).toEqual(state);
+})
+
+//Jason test
+test('should return all favorites by user Id', () => {
+  const state = {
+    posts: [],
+    loading: false,
+    currentPost_id: 0,
+    postsByCategory: [],
+    postsByUserId: [],
+    randPosts: [],
+    favorites: [],
+    favoritesByUserId: []
+  }
+
+  let getAllFavoritesByUserId = () => ({
+    type: "GET_ALL_FAVORITES_BY_USER_ID_FULFILLED",
+    payload: {
+      data: state.favoritesByUserId
+    }
+    
+  })
+
+  expect(postsReducer(state, getAllFavoritesByUserId())).toEqual(state);
+});

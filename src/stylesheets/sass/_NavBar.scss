@@ -16,6 +16,9 @@
     }
 }
 
+#garbage-div{
+  width: 100%;
+}
 .logo-type {
   text-decoration: none;
   color: white;
@@ -24,7 +27,15 @@
   padding: 0px;
 }
 
+#logo-box{
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+}
 
+#pounds-around-town {
+  padding-top: 20px;
+}
 
   .link {
     text-decoration: none;
