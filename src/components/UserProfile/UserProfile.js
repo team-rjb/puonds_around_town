@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MiniPostcard from '../MiniPostcard/MiniPostcard'
 import AddForm from '../AddPost/AddPost2'
-// import { LoginForm } from '../Login/Login2'
+
 
 export default function UserProfile() {
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
