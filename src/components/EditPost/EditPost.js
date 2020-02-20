@@ -11,6 +11,7 @@ export default function EditPost(props) {
   const [editState, setEditState] = useState(false);
   const [deleteState, setDeleteState] = useState(false);
   const { register, handleSubmit, errors } = useForm();
+  const [isDisabled, setIsDisabled] = useState(false)
   const onSubmit = data => handleEditPost(data);
   console.log(errors);
 
@@ -29,8 +30,9 @@ export default function EditPost(props) {
     dispatch(editPost(post_id, updated_post));
     setEditState(false);
     dispatch(getAllPosts())
-        dispatch(getAllPostsByUserId())
-    // props.setView("profile");
+    dispatch(getAllPostsByUserId())
+    setIsDisabled(false)
+    props.handleEditClick()
   };
 
   const handleDeletePost = () => {
@@ -39,13 +41,19 @@ export default function EditPost(props) {
     dispatch(deletePost(post_id));
     setDeleteState(false);
     dispatch(getAllPosts())
-        dispatch(getAllPostsByUserId())
-    // props.setView("profile");
+    dispatch(getAllPostsByUserId())
+    setIsDisabled(false)
+    props.handleEditClick()
+  };
+
+  const handleCancelEdit = () => {
+    props.handleEditClick()
   };
   const checkUploadResult = (error, resultEvent) => {
     if (resultEvent.event === "success") {
       console.log("checkUploadResult success: setting Post");
       setPost({ ...post, pic: resultEvent.info.url });
+      setIsDisabled(true)
     }
     else {console.log(error)}
   };
@@ -72,6 +80,7 @@ export default function EditPost(props) {
             className="add-post-button-1"
             name="img"
             onClick={() => widget.open()}
+            disabled={isDisabled}
           >
             Select a Photo
           </button>
@@ -140,7 +149,7 @@ export default function EditPost(props) {
           </div>
         )}
       </div>
-      {/* <button onClick ={handleChangeView}>To Profile</button> */}
+      <button onClick ={handleCancelEdit}>Cancel This Edit</button>
     </div>
   );
 }
