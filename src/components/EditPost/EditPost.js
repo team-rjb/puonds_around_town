@@ -18,14 +18,15 @@ export default function EditPost(props) {
   const handleEditPost = (data) => {
     const post_id = props.postId;
     const updated_post = {
-        pic: post.pic,
-        post_name: data.PetName,
-        breed: data.Breed,
-        age: data.Age,
-        gender: data.Gender,
-        fixed: data.Altered,
-        bio: data.Bio,
-        rating: data.Rating};
+      pic: post.pic,
+      post_name: data.PetName,
+      breed: data.Breed,
+      age: data.Age,
+      gender: data.Gender,
+      fixed: data.Altered,
+      bio: data.Bio,
+      rating: data.Rating
+    };
     console.log("handleEditPost, editPost.js", post_id);
     dispatch(editPost(post_id, updated_post));
     setEditState(false);
@@ -55,7 +56,7 @@ export default function EditPost(props) {
       setPost({ ...post, pic: resultEvent.info.url });
       setIsDisabled(true)
     }
-    else {console.log(error)}
+    else { console.log(error) }
   };
   let widget;
   if (window.cloudinary) {
@@ -73,83 +74,90 @@ export default function EditPost(props) {
   }
 
   return (
-    <div>
+    <div className="add-post-container">
+            <h1 className="add-post-header">Pupdate This Info</h1>
       {editState ? (
         <div>
           <button
-            className="add-post-button-1"
+            className="edit-post-button-1"
             name="img"
             onClick={() => widget.open()}
             disabled={isDisabled}
           >
-            Select a Photo
+            Add A New Photo
           </button>
 
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              type="text"
-              placeholder="PetName"
-              name="PetName"
-              ref={register({ required: true, maxLength: 80 })}
-            />
-            <input
-              type="text"
-              placeholder="Breed"
-              name="Breed"
-              ref={register({ required: true, maxLength: 100 })}
-            />
-            <input
-              type="number"
-              placeholder="Age"
-              name="Age"
-              ref={register({ required: true })}
-            />
-            <input
-              type="text"
-              placeholder="Bio/Description"
-              name="Bio"
-              ref={register({ required: true })}
-            />
-            <select name="Gender" placeholder="Gender" ref={register({ required: true })}>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Undetermined">Undetermined</option>
-            </select>
-            <select name="Altered" placeholder="Spayed/Neutered" ref={register({ required: true })}>
-              <option value="True">Fixed: True</option>
-              <option value="False">Fixed: False</option>
-              <option value="Undetermined">Undetermined</option>
-            </select>
-            <input
-              type="number"
-              placeholder="Fun Rating"
-              name="Rating"
-              ref={register({ required: true })}
-            />
-            <input type="submit" />
+            <div className="column-divs">
+              <div className="left-column">
+                <input
+                  type="text"
+                  placeholder="PetName"
+                  name="PetName"
+                  ref={register({ required: true, maxLength: 80 })}
+                />
+                <input
+                  type="text"
+                  placeholder="Breed"
+                  name="Breed"
+                  ref={register({ required: true, maxLength: 100 })}
+                />
+                <input
+                  type="number"
+                  placeholder="Age"
+                  name="Age"
+                  ref={register({ required: true })}
+                />
+                <input
+                  type="text"
+                  placeholder="Bio/Description"
+                  name="Bio"
+                  ref={register({ required: true })}
+                />
+              </div>
+              <div className="right-column">
+                <select name="Gender" placeholder="Gender" ref={register({ required: true })}>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Undetermined">Undetermined</option>
+                </select>
+                <select name="Altered" placeholder="Spayed/Neutered" ref={register({ required: true })}>
+                  <option value="True">Fixed: True</option>
+                  <option value="False">Fixed: False</option>
+                  <option value="Undetermined">Undetermined</option>
+                </select>
+                <input
+                  type="number"
+                  placeholder="Fun Rating"
+                  name="Rating"
+                  ref={register({ required: true })}
+                />
+                <input type="submit" />
+              </div>
+            </div>
           </form>
         </div>
       ) : (
-        <div>
-          {" "}
-          <h1>Edit This Pet Post's Information</h1>
-          <button onClick={setEditState}>Edit This Pet's Info</button>
-        </div>
-      )}
+          <div>
+            {" "}
+            {/* <h1>Pupdate This Info!</h1> */}
+            <button className="edit-buttons" onClick={setEditState}>Pupdate This Info!</button>
+          </div>
+        )}
 
       <div>
         {deleteState ? (
           <div>
-            <button onClick={handleDeletePost}>Submit Delete</button>
+            <button className="edit-buttons" onClick={handleDeletePost}>Submit Delete</button>
           </div>
         ) : (
-          <div>
-            <h1>Delete Your Pet Post</h1>
-            <button onClick={setDeleteState}>Delete This Pet Post</button>
-          </div>
-        )}
+            <div>
+              {/* <h1>Delete Your Pet Post</h1> */}
+              <button className="edit-buttons" onClick={setDeleteState}>Delete This Adopted Pet!</button>
+            </div>
+          )}
       </div>
-      <button onClick ={handleCancelEdit}>Cancel This Edit</button>
+      <button className="edit-buttons" onClick={handleCancelEdit}>Cancel The Pupdate</button>
     </div>
   );
 }

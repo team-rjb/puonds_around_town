@@ -1,4 +1,4 @@
-import React, {useSelector}from 'react';
+import React from 'react';
 import './reset.css';
 import NavBar from "./components/NavBar/NavBar";
 import routes from "./routes";

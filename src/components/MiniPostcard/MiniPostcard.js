@@ -19,7 +19,6 @@ class MiniPostcard extends Component {
                       <ModalPop 
                         setEditPost={this.props.setEditPost}
                         isLoading={this.props.isLoading}
-                        pic={this.props.pic} 
                         user={this.props.user_id}
                         post_id={this.props.post_id}
                         pic={this.props.pic}
