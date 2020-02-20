@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal  } from 'antd';
-import AddPost from '../AddPost/AddPost'
+import AddForm from '../AddPost/AddPost2'
 export default class ModalPop extends React.Component {
   state = {
     modal1Visible: false
@@ -14,7 +14,9 @@ export default class ModalPop extends React.Component {
   render() {
     return (
       <div>
+        <div className='add-dog-div'>
         <img type="primary" className="add-dog-icon" src={this.props.pic} alt='playful dog' onClick={() => this.setModal1Visible(true)} />
+        </div>
         <Modal
         width= '800'
           title="MOAR DOGS!"
@@ -23,7 +25,7 @@ export default class ModalPop extends React.Component {
           onOk={() => this.setModal1Visible(false)}
           onCancel={() => this.setModal1Visible(false)}
         >
-          <AddPost/>
+          <AddForm/>
         </Modal>
       </div>
     );

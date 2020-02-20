@@ -52,14 +52,19 @@ class NavBar extends React.Component {
             <Link to="/UserProfile/" className="link">
               <li className="menu-text">Profile</li>
             </Link>
-            <Link to="/" className="link">
-              <li className="menu-text">Login</li>
-            </Link>
+            {this.props.loggedIn ? (
             <Link to="/" className="link">
               <li className="menu-text" onClick={this.props.logoutUser}>
                 Logout
               </li>
             </Link>
+            ) : (
+            <Link to="/" className="link">
+              <li className="menu-text">Login</li>
+            </Link>
+            )}
+           
+            
 
             <li>
               <img className="responsive-menu"
@@ -101,4 +106,9 @@ class NavBar extends React.Component {
   }
 }
 
-export default connect(null, { logoutUser })(NavBar);
+const mapStateToProps = reduxState => {
+  return {
+      loggedIn: reduxState.authReducer.loggedIn
+  }
+}
+export default connect(mapStateToProps, { logoutUser })(NavBar);
