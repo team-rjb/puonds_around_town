@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
 .add-post-container {
-  background-color: #EAEAEA;
+  background-image: url("https://i.imgur.com/sjinFJb.png");
   width: 75vw;
   height: 75vh;
   border: 5px solid #666666;
@@ -16,9 +16,99 @@
           align-items: center;
 }
 
+.addPostDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .add-post-button-1 {
   background-color: #F4C271;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  margin-bottom: 50px;
+}
+
+.add-post-header {
+  font-size: 50px;
+  margin-top: 25px;
+  color: #666666;
+  text-align: center;
+}
+
+.left-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 60px;
+}
+
+.right-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 60px;
+}
+
+.column-divs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 350px;
+  margin-bottom: 40px;
+}
+
+.ant-modal-footer {
+  height: 0px;
+  width: 0px;
+}
+
+.ant-btn {
+  height: 0px;
+  width: 0px;
+  font-size: 0px;
+  background-color: inherit;
+}
+
+.ant-btn.atn-btn-primary {
+  height: 0px;
+  width: 0px;
+  font-size: 0px;
+  background-color: inherit;
 }
 
 body {
@@ -73,6 +163,30 @@ body {
 .all-posts-container {
   width: 396px;
   margin: 30px;
+}
+
+.edit-post-button-1 {
+  background-color: #F4C271;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  margin-bottom: 50px;
+  margin-left: 120px;
+}
+
+.edit-buttons {
+  background-color: #F4C271;
+  color: white;
+  margin: 7px;
 }
 
 .guest-landing-container {
@@ -764,5 +878,10 @@ body {
 .add-dog-icon {
   margin-top: 40px;
   max-height: 200px;
+}
+
+.add-dog-div {
+  margin-left: 43.5vw;
+  width: 275px;
 }
 /*# sourceMappingURL=main.css.map */

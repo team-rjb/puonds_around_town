@@ -7,9 +7,8 @@ import routes from "./routes";
 function App() {
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       {routes}
-    
     </div>
   );
 }
