@@ -1,4 +1,3 @@
- 
  .nav-bar-container {
     background-size: 100vw;
     background-color: #54B7C4;
@@ -17,12 +16,17 @@
     }
 }
 
-.logo-type {
+
+#pounds-around-town {
   text-decoration: none;
   color: white;
   font-size: 35px;
   margin-left: 0px;
   padding: 0px;
+  :hover {
+    color:#F4C271;
+    cursor: pointer;
+}
 }
 
 #logo-box{

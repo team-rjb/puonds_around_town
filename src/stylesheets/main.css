@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
-@import '~antd/dist/antd.css';
 body {
   background-image: url("https://i.imgur.com/sjinFJb.png");
   background-size: 100%;
@@ -405,12 +404,17 @@ body {
   cursor: pointer;
 }
 
-.logo-type {
+#pounds-around-town {
   text-decoration: none;
   color: white;
   font-size: 35px;
   margin-left: 0px;
   padding: 0px;
+}
+
+#pounds-around-town :hover {
+  color: #F4C271;
+  cursor: pointer;
 }
 
 #logo-box {
@@ -621,12 +625,11 @@ body {
 }
 
 .dog-container-content .full-dog-image {
-  width: 98%;
+  width: 100%;
   height: 700px;
   -o-object-fit: cover;
      object-fit: cover;
   border-right: solid 5px #666666;
-  margin-right: 15px;
 }
 
 .dog-container-content .dog-info {
@@ -634,6 +637,8 @@ body {
   margin-right: 15px;
   line-height: 50px;
   font-size: 25px;
+  margin-left: 25px;
+  width: 40%;
 }
 
 .dog-container-content .bio-chunk {
@@ -646,12 +651,18 @@ body {
   font-size: 25px;
 }
 
-.name-icon {
+.icons {
   width: 50px;
   margin-right: 15px;
 }
 
-.icon-and-name {
+.breed-icon {
+  width: 25px;
+  margin-right: 27px;
+  margin-left: 13px;
+}
+
+.icon-and-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -665,6 +676,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.fav-icon-white {
+  width: 50px;
+}
+
+.edit-icon-white {
+  width: 50px;
 }
 
 #profile-main {
