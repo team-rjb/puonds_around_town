@@ -32,6 +32,7 @@ export default function EditPost(props) {
     dispatch(getAllPosts())
     dispatch(getAllPostsByUserId())
     setIsDisabled(false)
+    props.handleEditClick()
   };
 
   const handleDeletePost = () => {
@@ -42,6 +43,11 @@ export default function EditPost(props) {
     dispatch(getAllPosts())
     dispatch(getAllPostsByUserId())
     setIsDisabled(false)
+    props.handleEditClick()
+  };
+
+  const handleCancelEdit = () => {
+    props.handleEditClick()
   };
   const checkUploadResult = (error, resultEvent) => {
     if (resultEvent.event === "success") {
@@ -143,7 +149,7 @@ export default function EditPost(props) {
           </div>
         )}
       </div>
-      {/* <button onClick ={handleChangeView}>To Profile</button> */}
+      <button onClick ={handleCancelEdit}>Cancel This Edit</button>
     </div>
   );
 }

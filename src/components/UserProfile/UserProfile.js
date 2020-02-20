@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { GreyDogSpinner } from "../../assets/index";
@@ -11,12 +11,14 @@ export default function UserProfile() {
   const userPosts = useSelector(state => state.postsReducer.postsByUserId);
   const userFavorites = useSelector(state => state.postsReducer.favoritesByUserId);
   const isLoading = useSelector(state => state.postsReducer.loading);
-
+  const [editPost, setEditPost] = useState(false)
   const postsMapped = userPosts.map((post, i) => {
     return (
       <div>
         <div key={i} className="profile-posts-map">
           <MiniPostcard
+            editPost={editPost}
+            setEditPost={setEditPost}
             user={post.user_id}
             post_id={post.post_id}
             pic={post.pic}

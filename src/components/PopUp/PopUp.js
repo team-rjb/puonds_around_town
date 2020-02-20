@@ -2,9 +2,8 @@ import React from "react";
 import Popup from "reactjs-popup";
 import PostCard from '../PostCard/PostCard';
 
-
 export default (props) => (
-    <Popup trigger={<img className="dog-image" src={props.pic} alt='Dog'></img>} position="center center">
+    <Popup trigger={<img className="dog-image" src={props.pic} alt='Dog' position="right top"></img>}>
         <div id="puppy-div">
             <PostCard
                 user={props.user_id}

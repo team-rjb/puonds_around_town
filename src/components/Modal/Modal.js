@@ -35,6 +35,7 @@ export default class ModalPop extends React.Component {
         onCancel={() => this.setModal1Visible(false)}
         >
           <PostCard
+                setEditPost={this.props.setEditPost}
                 user={this.props.user_id}
                 post_id={this.props.post_id}
                 pic={this.props.pic}
