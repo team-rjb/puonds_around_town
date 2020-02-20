@@ -18,6 +18,7 @@ class MiniPostcard extends Component {
                 <div className="mini-dog-container-content" key={this.props.post_id}>
                     <section>
                       <ModalPop 
+                        isLoading={this.props.isLoading}
                         pic={this.props.pic} 
                         user={this.props.user_id}
                         post_id={this.props.post_id}

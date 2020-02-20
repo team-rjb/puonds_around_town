@@ -10,7 +10,7 @@ import { LoginForm } from "../Login/Login2"
 
 function GuestLanding() {
   //The hooks below are doing the following:
-  //Dispatch is destructing the "dispatch" hook which is used to send redux commands
+  //Dispatch is destructuring the "dispatch" hook which is used to send redux commands
   //useSelector is connecting to the Redux store to get state values, and assigning them to
   //the local variables "loggedIn", "isAdmin" and "authState".
   //LoggedIn/IsAdmin are self-explanatory, authState is the entire state value of the authReducer
@@ -44,12 +44,9 @@ function GuestLanding() {
           <Redirect to="/UserProfile/" />
         ) : (
             <div>
-              {/* <h1>Welcome to Pounds Around Town!</h1> */}
-              {/* <Login /> */}
               <div className='loginForm'>
                 <LoginForm />
               </div>
-              {/* <Register /> */}
             </div>
           )}
       </div>
