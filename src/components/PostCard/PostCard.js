@@ -9,6 +9,8 @@ import fixedicon from '../../stylesheets/design_elements/fixed_icon.svg';
 import ratingicon from '../../stylesheets/design_elements/rating_icon.svg';
 import locationicon from '../../stylesheets/design_elements/location_icon.svg';
 import bioicon from '../../stylesheets/design_elements/bio-icon.svg';
+import favoriteiconwhite from '../../stylesheets/design_elements/favorite_icon_white.svg';
+import editiconwhite from '../../stylesheets/design_elements/edit-icon-white.svg';
 
 class PostCard extends Component {
     constructor() {
@@ -61,7 +63,7 @@ class PostCard extends Component {
                                 <h5 className="full-dog-bio"> <span className="bio-header">Bio: </span> {this.props.bio}</h5>
                             </section>
                         </div>
-                        {this.props.isAdmin ? (<button>Edit</button>) : (<button onClick={() => this.props.addToFavorites(this.props.post_id)}>Favorite</button>)}
+                        {this.props.isAdmin ? (<img onClick={() => this.props.editPost(this.props.post_id)} className="edit-icon-white" src={editiconwhite} alt="pencil"/>) : (<img onClick={() => this.props.addToFavorites(this.props.post_id)} className="fav-icon-white" src={favoriteiconwhite} alt="heart"/>)}
                     </section>
                 </div>
             </div>
