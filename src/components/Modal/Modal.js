@@ -1,6 +1,9 @@
 import React from 'react'
 import { Modal  } from 'antd';
 import PostCard from '../PostCard/PostCard'
+import {KhakiDogSpinner} from '../../assets/index'
+
+
 export default class ModalPop extends React.Component {
   state = {
     modal1Visible: false
@@ -14,17 +17,25 @@ export default class ModalPop extends React.Component {
 
   render() {
     return (
+
+      <div>
+        {this.props.isLoading ? (
+        <div className= "spinnerDog">
+        <KhakiDogSpinner />
+      </div>
+      ) : (
       <div>
         <img type="primary" className="dog-image" src={this.props.pic} alt='Dog' onClick={() => this.setModal1Visible(true)} />
         <Modal
         width= '800'
-          title="Pupper-View"
-          centered
-          visible={this.state.modal1Visible}
-          onOk={() => this.setModal1Visible(false)}
-          onCancel={() => this.setModal1Visible(false)}
+        title="Pupper-View"
+        centered
+        visible={this.state.modal1Visible}
+        onOk={() => this.setModal1Visible(false)}
+        onCancel={() => this.setModal1Visible(false)}
         >
           <PostCard
+                setEditPost={this.props.setEditPost}
                 user={this.props.user_id}
                 post_id={this.props.post_id}
                 pic={this.props.pic}
@@ -39,6 +50,7 @@ export default class ModalPop extends React.Component {
                 isAdmin={this.props.isAdmin}
             />
         </Modal>
+      </div>)}
       </div>
     );
   }

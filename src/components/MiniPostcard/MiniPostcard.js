@@ -17,6 +17,9 @@ class MiniPostcard extends Component {
                 <div className="mini-dog-container-content" key={this.props.post_id}>
                     <section>
                       <ModalPop 
+                        setEditPost={this.props.setEditPost}
+                        isLoading={this.props.isLoading}
+                        pic={this.props.pic} 
                         user={this.props.user_id}
                         post_id={this.props.post_id}
                         pic={this.props.pic}
@@ -41,5 +44,6 @@ class MiniPostcard extends Component {
         )
     }
 }
+
 
 export default MiniPostcard;
