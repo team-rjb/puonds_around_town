@@ -2,7 +2,8 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MiniPostcard from '../MiniPostcard/MiniPostcard'
-import AddForm from '../AddPost/AddPost2'
+import adddogicon from '../../stylesheets/design_elements/add-dog-icon.svg';
+import ModalAddPost from '../Modal/ModalAddPost';
 
 
 export default function UserProfile() {
@@ -62,8 +63,7 @@ export default function UserProfile() {
           <div>
             {isAdmin ? (
               <div>
-                <h1 className="profile-header">Admin Profile</h1>
-                <AddForm />
+                <ModalAddPost pic={adddogicon}/>
                 <section id="profile-page">
                   {postsMapped}
                 </section>
