@@ -4,8 +4,6 @@ import { useSelector } from "react-redux";
 import MiniPostcard from '../MiniPostcard/MiniPostcard'
 import adddogicon from '../../stylesheets/design_elements/add-dog-icon.svg';
 import ModalAddPost from '../Modal/ModalAddPost';
-import { GreyDogSpinner } from "../../assets/index";
-import AddForm from "../AddPost/AddPost2";
 
 export default function UserProfile() {
   const loggedIn = useSelector(state => state.authReducer.loggedIn);
@@ -71,12 +69,7 @@ export default function UserProfile() {
                 <section id="profile-page">
                   {postsMapped}
                 </section>            
-                  <div>
-                    <h1 className="profile-header">Admin Profile</h1>
-                    <AddForm />
-                    <section id="profile-page">{postsMapped}</section>
-                  </div>             
-              </div>
+                  </div>
             ) : (
               <div>
                 <h1 className="profile-header">

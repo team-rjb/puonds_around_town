@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useSelector}from 'react';
 import './reset.css';
 import NavBar from "./components/NavBar/NavBar";
 import routes from "./routes";
@@ -7,9 +7,8 @@ import routes from "./routes";
 function App() {
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       {routes}
-    
     </div>
   );
 }
