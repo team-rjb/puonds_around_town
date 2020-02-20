@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import MiniPostcard from '../MiniPostcard/MiniPostcard'
+import adddogicon from '../../stylesheets/design_elements/add-dog-icon.svg';
+import ModalAddPost from '../Modal/ModalAddPost';
 import { GreyDogSpinner } from "../../assets/index";
-import MiniPostcard from "../MiniPostcard/MiniPostcard";
 import AddForm from "../AddPost/AddPost2";
 
 export default function UserProfile() {
@@ -65,13 +67,15 @@ export default function UserProfile() {
           <div>
             {isAdmin ? (
               <div>
-            
+                <ModalAddPost pic={adddogicon}/>
+                <section id="profile-page">
+                  {postsMapped}
+                </section>            
                   <div>
                     <h1 className="profile-header">Admin Profile</h1>
                     <AddForm />
                     <section id="profile-page">{postsMapped}</section>
-                  </div>
-               
+                  </div>             
               </div>
             ) : (
               <div>
